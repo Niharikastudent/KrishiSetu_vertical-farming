@@ -38,6 +38,13 @@ Website - https://krishisetu-8ubi.onrender.com/
 ### 5. 🚜 Farm Gear Rental & Exchange (कृषि यंत्र)
 - Hourly/daily tractor, reaper, rotavator, and sprayer rentals between neighboring farmers.
 
+### 6. 🌱 Vertical Farming Workspace (Hackathon Demo)
+- Open **Vertical Farm** from the signed-in app navigation to see example crop progress, equipment checks, sample produce plans, and demo produce orders.
+- Farm Operators and Delivery Partners can register, view role-based work, accept assignments, and update task status. Operator profiles can post work.
+- Partner profiles, task assignments, plan requests, and demo order requests use the existing JSON-file store under `DATA_DIR`; they are protected by the app's existing sign-in.
+- Plan prices, produce quantities, crop progress, equipment status, catalog prices, and seeded work listings are **sample demo data**, not confirmed offers or live sensor readings. Plan and order requests do not collect payment or arrange delivery.
+- The investment comparison uses editable example inputs to estimate annual revenue, operating costs, break-even selling price, and setup payback. It is an illustration, not financial advice or a profit guarantee.
+
 ---
 
 ## 🗣️ Supported Languages (7 Indian Languages)
@@ -65,15 +72,17 @@ KrishiSetu features a reactive, zero-reload translation engine with synchronized
 git clone https://github.com/shreyasjoshi659-tech/KrishiSetu_.git
 
 # Navigate into project directory
-cd krishisetu-ai
+cd KrishiSetu_
 
 # Install dependencies
-npm install
+npm ci
 
 # Start local server
 npm start
 # Server runs at http://localhost:3000
 ```
+
+Open `http://localhost:3000`, register a test account, sign in, then choose **Vertical Farm**. The old `/vertical-farming.html` URL redirects to the integrated app page. No extra environment variables are required for the demo; the app creates a local JWT secret automatically. Render's `render.yaml` sets `DATA_DIR=/var/data` and mounts a persistent disk, so the new JSON collections persist there. The Vercel configuration uses the app's `/tmp` fallback unless a persistent data directory is configured.
 
 ---
 

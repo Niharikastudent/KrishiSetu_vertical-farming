@@ -9,6 +9,7 @@ const mailer = require('./lib/mailer');
 const { router: poolRouter, handleInbound } = require('./routes/pools');
 const { router: labourRouter } = require('./routes/labour');
 const { router: equipmentRouter, UPLOADS } = require('./routes/equipment');
+const { router: farmHubRouter } = require('./routes/farm-hub');
 
 const PORT = process.env.PORT || 3000;
 const usersCol = col('users');
@@ -75,10 +76,12 @@ app.get('/api/me', auth, (req, res) => res.json({ user: publicUser(req.user) }))
 app.use('/api', poolRouter);
 app.use('/api', labourRouter);
 app.use('/api', equipmentRouter);
+app.use('/api', farmHubRouter);
 app.use('/api', (_req, res) => res.status(404).json({ error: 'Not found.' }));
 
 app.use('/uploads', express.static(UPLOADS, { maxAge: '7d', setHeaders: (r) => r.setHeader('X-Content-Type-Options', 'nosniff') }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('/vertical-farming.html', (_req, res) => res.redirect(302, '/app#/vertical-farming'));
 const appPage = (_req, res) => res.sendFile(path.join(__dirname, 'public', 'app.html'));
 const loginPage = (_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html'));
 app.get('/login', loginPage);
