@@ -78,9 +78,13 @@ const appPage = (_req, res) => res.sendFile(path.join(__dirname, 'public', 'app.
 app.get('/app', appPage);
 app.get('/join/:code', appPage);
 
-mailer.startInbox(handleInbound);
-app.listen(PORT, () => {
-  const s = mailer.status();
-  console.log(`KrishiSetu running at http://localhost:${PORT}`);
-  console.log(s.mode === 'live' ? `[mail] LIVE email via ${s.from}` : '[mail] TEST mode – SMTP not configured (see .env.example). Emails are NOT delivered to real inboxes.');
-});
+if (!process.env.VERCEL) {
+  mailer.startInbox(handleInbound);
+  app.listen(PORT, () => {
+    const s = mailer.status();
+    console.log(`KrishiSetu running at http://localhost:${PORT}`);
+    console.log(s.mode === 'live' ? `[mail] LIVE email via ${s.from}` : '[mail] TEST mode – SMTP not configured (see .env.example). Emails are NOT delivered to real inboxes.');
+  });
+}
+
+module.exports = app;

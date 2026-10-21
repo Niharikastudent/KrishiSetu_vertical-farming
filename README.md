@@ -2,16 +2,16 @@
 
 > **Empowering Indian Farmer Collectives through Crop Pooling, Direct Buyer Outreach, Labour Marketplace & Farm Gear Exchange.**
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-empty--bees--rule.loca.lt-28a745?style=for-the-badge&logo=google-chrome&logoColor=white)](https://empty-bees-rule.loca.lt)
+[![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://temporary-rapid-bamboo-4bu7pek.vercel.app)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-krishisetu--ai-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shreyasjoshi659-tech/krishisetu-ai)
-[![Languages](https://img.shields.io/badge/Languages-7_Indian_Languages-d89932?style=for-the-badge)](https://empty-bees-rule.loca.lt)
+[![Languages](https://img.shields.io/badge/Languages-7_Indian_Languages-d89932?style=for-the-badge)](https://temporary-rapid-bamboo-4bu7pek.vercel.app)
 
 ---
 
 ## 🌐 Live Website & Demo Access
 
-- **Public Website Link**: **[https://empty-bees-rule.loca.lt](https://empty-bees-rule.loca.lt)**
-  *(If prompted for a Tunnel Password on first visit, enter your external IP: `223.238.165.136`)*
+- **Vercel Live URL**: **[https://temporary-rapid-bamboo-4bu7pek.vercel.app](https://temporary-rapid-bamboo-4bu7pek.vercel.app)**
+- **Claim this deployment to your Vercel account**: [Claim on Vercel](https://vercel.com/claim-deployment?code=6e21c92a-2ce2-4e9a-b28d-6f8216fb2416)
 - **Demo Farmer Login**:
   - **Mobile Number**: `9876543210`
   - **Password**: `password123`
