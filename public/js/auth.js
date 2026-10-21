@@ -6,22 +6,22 @@
     'Assam', 'Himachal Pradesh', 'Jharkhand', 'Kerala', 'Uttarakhand', 'Other'
   ];
 
-  const CROPS = [
-    { id: 'Wheat', label: 'गेहूं (Wheat)', variety: 'Sharbati / Lokwan' },
-    { id: 'Rice', label: 'धान / चावल (Paddy)', variety: 'Basmati / Sona Masoori' },
-    { id: 'Cotton', label: 'कपास (Cotton)', variety: 'BT Hybrid' },
-    { id: 'Soybean', label: 'सोयाबीन (Soybean)', variety: 'Yellow' },
-    { id: 'Pulses', label: 'चना / दालें (Gram/Pulses)', variety: 'Desi Chana' },
-    { id: 'Maize', label: 'मक्का (Maize)', variety: 'Kharif/Rabi' },
-    { id: 'Sugarcane', label: 'गन्ना (Sugarcane)', variety: 'Co 0238' },
-    { id: 'Mustard', label: 'सरसों (Mustard)', variety: 'Pusa' },
-    { id: 'Onion', label: 'प्याज (Onion)', variety: 'Nashik Red' },
-    { id: 'Potato', label: 'आलू (Potato)', variety: 'Kufri Jyoti' },
-    { id: 'Millets', label: 'बाजरा / ज्वार (Millets)', variety: 'Desi' },
-    { id: 'Groundnut', label: 'मूंगफली (Groundnut)', variety: 'Bold' }
+  const CROPS_DATA = [
+    { id: 'Wheat', en: 'Wheat', hi: 'गेहूं (Wheat)', mr: 'गहू (Wheat)', pa: 'ਕਣਕ (Wheat)', kn: 'ಗೋಧಿ (Wheat)', te: 'గోధుమ (Wheat)', gu: 'ઘઉં (Wheat)' },
+    { id: 'Rice', en: 'Paddy / Rice', hi: 'धान / चावल (Paddy)', mr: 'भात / तांदूळ (Paddy)', pa: 'ਝੋਨਾ (Paddy)', kn: 'ಭತ್ತ / ಅಕ್ಕಿ (Paddy)', te: 'వరి / బియ్యం (Paddy)', gu: 'ડાંગર / ચોખા (Paddy)' },
+    { id: 'Cotton', en: 'Cotton', hi: 'कपास (Cotton)', mr: 'कापूस (Cotton)', pa: 'ਕਪਾਹ (Cotton)', kn: 'ಹತ್ತಿ (Cotton)', te: 'పత్తి (Cotton)', gu: 'કપાસ (Cotton)' },
+    { id: 'Soybean', en: 'Soybean', hi: 'सोयाबीन (Soybean)', mr: 'सोयाबीन (Soybean)', pa: 'ਸੋਇਆਬੀਨ (Soybean)', kn: 'ಸೋಯಾಬೀನ್ (Soybean)', te: 'సోయాబీన్ (Soybean)', gu: 'સોયાબીન (Soybean)' },
+    { id: 'Pulses', en: 'Gram / Pulses', hi: 'चना / दालें (Gram/Pulses)', mr: 'हरभरा / डाळी (Pulses)', pa: 'ਛੋਲੇ / ਦਾਲਾਂ (Pulses)', kn: 'ಕಡಲೆ / ಬೇಳೆಕಾಳು (Pulses)', te: 'శనగలు / పప్పులు (Pulses)', gu: 'ચણા / કઠોળ (Pulses)' },
+    { id: 'Maize', en: 'Maize', hi: 'मक्का (Maize)', mr: 'मका (Maize)', pa: 'ਮੱਕੀ (Maize)', kn: 'ಮೆಕ್ಕೆಜೋಳ (Maize)', te: 'మొక్కజొన్న (Maize)', gu: 'મકાઈ (Maize)' },
+    { id: 'Sugarcane', en: 'Sugarcane', hi: 'गन्ना (Sugarcane)', mr: 'ऊस (Sugarcane)', pa: 'ਗੰਨਾ (Sugarcane)', kn: 'ಕಬ್ಬು (Sugarcane)', te: 'చెరకు (Sugarcane)', gu: 'શેરડી (Sugarcane)' },
+    { id: 'Mustard', en: 'Mustard', hi: 'सरसों (Mustard)', mr: 'मोहरी (Mustard)', pa: 'ਸਰ੍ਹੋਂ (Mustard)', kn: 'ಸಾಸಿವೆ (Mustard)', te: 'ఆవాలు (Mustard)', gu: 'રાયડો / સરસવ (Mustard)' },
+    { id: 'Onion', en: 'Onion', hi: 'प्याज (Onion)', mr: 'कांदा (Onion)', pa: 'ਪਿਆਜ਼ (Onion)', kn: 'ಈರುಳ್ಳಿ (Onion)', te: 'ఉల్లిపాయ (Onion)', gu: 'ડુંગળી (Onion)' },
+    { id: 'Potato', en: 'Potato', hi: 'आलू (Potato)', mr: 'बटाटा (Potato)', pa: 'ਆਲੂ (Potato)', kn: 'ಆಲೂಗಡ್ಡೆ (Potato)', te: 'బంగాళాదుంప (Potato)', gu: 'બટાકા (Potato)' },
+    { id: 'Millets', en: 'Millets', hi: 'बाजरा / ज्वार (Millets)', mr: 'बाजरी / ज्वारी (Millets)', pa: 'ਬਾਜਰਾ / ਜਵਾਰ (Millets)', kn: 'ಸಿರಿಧಾನ್ಯ / ಜೋಳ (Millets)', te: 'చిరుధాన్యాలు (Millets)', gu: 'બાજરી / જુવાર (Millets)' },
+    { id: 'Groundnut', en: 'Groundnut', hi: 'मूंगफली (Groundnut)', mr: 'भुईमूग (Groundnut)', pa: 'ਮੂੰਗਫਲੀ (Groundnut)', kn: 'ಕಡಲೆಕಾಯಿ (Groundnut)', te: 'వేరుశనగ (Groundnut)', gu: 'મગફળી (Groundnut)' }
   ];
 
-  // If already logged in, redirect to app
+  // Already logged in? Skip welcome page
   const nextUrl = () => {
     const n = localStorage.getItem('ks_next');
     localStorage.removeItem('ks_next');
@@ -31,19 +31,49 @@
 
   const $ = (id) => document.getElementById(id);
 
-  // Attach language selector
-  if (window.I18N && $('hero-lang')) {
-    $('hero-lang').innerHTML = I18N.selectorHtml();
-    I18N.attachPicker($('hero-lang'));
+  function renderCrops() {
+    const lang = window.I18N ? I18N.getLang() : 'en';
+    const checked = new Set([...document.querySelectorAll('#crops input:checked')].map((c) => c.value));
+    $('crops').innerHTML = CROPS_DATA.map((c) => {
+      const isChecked = checked.has(c.id);
+      const label = c[lang] || c.en || c.hi;
+      return `
+        <label class="crop">
+          <input type="checkbox" value="${c.id}" ${isChecked ? 'checked' : ''}>
+          <span>${label}</span>
+        </label>
+      `;
+    }).join('');
   }
 
+  // Populate States
   $('r-state').insertAdjacentHTML('beforeend', STATES.map((s) => `<option value="${s}">${s}</option>`).join(''));
-  $('crops').innerHTML = CROPS.map((c) => `
-    <label class="crop" title="${c.variety}">
-      <input type="checkbox" value="${c.id}">
-      <span>${c.label}</span>
-    </label>
-  `).join('');
+  renderCrops();
+
+  // Attach language selector in both hero header and login card
+  if (window.I18N) {
+    if ($('hero-lang')) $('hero-lang').innerHTML = I18N.selectorHtml('hero-lang-sel');
+    if ($('card-lang')) $('card-lang').innerHTML = I18N.selectorHtml('card-lang-sel');
+    I18N.attachPicker(document);
+    I18N.applyPage(document);
+  }
+
+  function updatePwToggles() {
+    document.querySelectorAll('[data-toggle]').forEach((b) => {
+      const i = $(b.dataset.toggle);
+      if (!i) return;
+      const isVisible = i.type === 'text';
+      const showText = window.I18N ? I18N.t('show_pw') : 'Show';
+      const hideText = window.I18N ? I18N.t('hide_pw') : 'Hide';
+      b.textContent = isVisible ? hideText : showText;
+    });
+  }
+
+  window.addEventListener('langchange', () => {
+    renderCrops();
+    updatePwToggles();
+    if (window.I18N) I18N.applyPage(document);
+  });
 
   const tabs = $('tabs');
   function show(which) {
@@ -54,17 +84,22 @@
   }
   document.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => show(b.dataset.tab)));
   document.querySelectorAll('[data-go]').forEach((a) => a.addEventListener('click', () => show(a.dataset.go)));
+
   document.querySelectorAll('[data-toggle]').forEach((b) => b.addEventListener('click', () => {
     const i = $(b.dataset.toggle);
-    i.type = i.type === 'password' ? 'text' : 'password';
-    b.textContent = i.type === 'password' ? 'दिखाएं' : 'छिपाएं';
+    if (!i) return;
+    const isPw = i.type === 'password';
+    i.type = isPw ? 'text' : 'password';
+    const showText = window.I18N ? I18N.t('show_pw') : 'Show';
+    const hideText = window.I18N ? I18N.t('hide_pw') : 'Hide';
+    b.textContent = isPw ? hideText : showText;
   }));
 
   async function submit(url, body, btn, errEl) {
     errEl.textContent = '';
     const originalText = btn.innerHTML;
     btn.disabled = true;
-    btn.innerHTML = '<span>जांच हो रही है… Please wait</span>';
+    btn.innerHTML = `<span>${window.I18N ? I18N.t('btn_wait') : 'Please wait…'}</span>`;
     try {
       const res = await fetch(url, {
         method: 'POST',
@@ -72,13 +107,13 @@
         body: JSON.stringify(body)
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || 'सत्यापन विफल रहा। पुनः प्रयास करें।');
+      if (!res.ok) throw new Error(data.error || 'Verification failed. Please try again.');
       localStorage.setItem('ks_token', data.token);
       localStorage.setItem('ks_user', JSON.stringify(data.user));
-      btn.innerHTML = '<span>सफल ✓ Welcome</span>';
+      btn.innerHTML = `<span>${window.I18N ? I18N.t('btn_welcome_check') : 'Welcome ✓'}</span>`;
       location.href = nextUrl();
     } catch (e) {
-      errEl.textContent = e.message === 'Failed to fetch' ? 'सर्वर से संपर्क नहीं हो सका। इंटरनेट जांचें।' : e.message;
+      errEl.textContent = e.message === 'Failed to fetch' ? 'Cannot reach server. Check connection.' : e.message;
       btn.disabled = false;
       btn.innerHTML = originalText;
     }

@@ -54,30 +54,39 @@
 
   // Attach language selector in sidebar if available
   if (window.I18N && $('side-lang')) {
-    $('side-lang').innerHTML = I18N.selectorHtml();
+    $('side-lang').innerHTML = I18N.selectorHtml('side-lang-sel');
     I18N.attachPicker($('side-lang'));
+    I18N.applyPage(document);
   }
 
   // Navigation Items (Clear, purposeful agricultural labels)
-  const navItems = [
-    { id: 'home', icon: '📊', bi: ['डैशबोर्ड', 'Dashboard'], h: '#/home' },
-    { id: 'pools', icon: '🌾', bi: ['फसल समूह', 'Crop Pools'], h: '#/pools' },
-    { id: 'labour', icon: '🧑‍🌾', bi: ['खेत श्रमिक', 'Farm Labour'], h: '#/labour' },
-    { id: 'gear', icon: '🚜', bi: ['कृषि यंत्र', 'Farm Gear'], h: '#/gear' }
-  ];
+  function getNavItems() {
+    return [
+      { id: 'home', icon: '📊', main: window.I18N ? I18N.t('nav_home_main') : 'Dashboard', sub: window.I18N ? I18N.t('nav_home_sub') : 'Farmer Summary', h: '#/home' },
+      { id: 'pools', icon: '🌾', main: window.I18N ? I18N.t('nav_pools_main') : 'Crop Pools', sub: window.I18N ? I18N.t('nav_pools_sub') : 'Collective Sale', h: '#/pools' },
+      { id: 'labour', icon: '🧑‍🌾', main: window.I18N ? I18N.t('nav_labour_main') : 'Farm Labour', sub: window.I18N ? I18N.t('nav_labour_sub') : 'Local Hands', h: '#/labour' },
+      { id: 'gear', icon: '🚜', main: window.I18N ? I18N.t('nav_gear_main') : 'Farm Gear', sub: window.I18N ? I18N.t('nav_gear_sub') : 'Rent & Buy', h: '#/gear' }
+    ];
+  }
 
   function renderNav() {
-    const navHtml = navItems.map((item) => `
+    const items = getNavItems();
+    const navHtml = items.map((item) => `
       <a href="${item.h}" data-h="${item.h}">
         <span class="ico">${item.icon}</span>
-        <span class="bi-text"><span class="bi-main">${item.bi[0]}</span><span class="bi-sub">${item.bi[1]}</span></span>
+        <span class="bi-text"><span class="bi-main">${item.main}</span><span class="bi-sub">${item.sub}</span></span>
       </a>
     `).join('');
     $('nav').innerHTML = navHtml;
     $('bnav').innerHTML = navHtml;
   }
   renderNav();
-  window.addEventListener('langchange', renderNav);
+
+  window.addEventListener('langchange', () => {
+    renderNav();
+    if (window.I18N) I18N.applyPage(document);
+    route();
+  });
 
   const view = $('view');
   let cleanup = null;
@@ -213,11 +222,12 @@
 
       <header class="topbar">
         <div>
-          <h1>राम-राम, ${esc(first)} जी 🙏</h1>
-          <p>किसान उत्पादक समूह डैशबोर्ड · Farmer Collective Dashboard</p>
+          <h1>${window.I18N ? I18N.t('greeting_fmt', { name: esc(first) }) : 'Welcome, ' + esc(first) + ' 🙏'}</h1>
+          <p data-i18n="brand_sub">${window.I18N ? I18N.t('brand_sub') : 'KrishiSetu · Farmer Collective Portal'}</p>
         </div>
-        <div style="display:flex; gap:8px; align-items:center;">
-          <a class="btn sm" href="#/pools/new">+ नया समूह · New Pool</a>
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+          <div id="top-lang">${window.I18N ? I18N.selectorHtml('topbar-lang-sel') : ''}</div>
+          <a class="btn sm" href="#/pools/new">${window.I18N ? I18N.t('btn_new_pool') : '+ New Pool'}</a>
         </div>
       </header>
 
@@ -282,6 +292,10 @@
         </div>
       </section>
     `;
+    if (window.I18N) {
+      I18N.attachPicker(view);
+      I18N.applyPage(view);
+    }
   }
 
   async function route() {
