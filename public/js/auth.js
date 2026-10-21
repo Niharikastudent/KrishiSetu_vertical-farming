@@ -22,10 +22,12 @@
   ];
 
   // Already logged in? Skip welcome page
+  const isStatic = location.hostname.endsWith('github.io') || location.pathname.endsWith('index.html') || location.protocol === 'file:';
   const nextUrl = () => {
     const n = localStorage.getItem('ks_next');
     localStorage.removeItem('ks_next');
-    return n && n.startsWith('/join/') ? n : '/app';
+    if (n && n.startsWith('/join/')) return isStatic ? 'app.html' + n.replace('/join', '#/join') : n;
+    return isStatic ? 'app.html' : '/app';
   };
   if (localStorage.getItem('ks_token')) location.replace(nextUrl());
 

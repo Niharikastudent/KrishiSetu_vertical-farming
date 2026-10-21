@@ -1,13 +1,15 @@
 (async () => {
   const token = localStorage.getItem('ks_token');
+  const isStatic = location.hostname.endsWith('github.io') || location.pathname.endsWith('app.html') || location.protocol === 'file:';
+  const homeUrl = isStatic ? 'index.html' : '/';
   const logout = () => {
     localStorage.removeItem('ks_token');
     localStorage.removeItem('ks_user');
-    location.replace('/');
+    location.replace(homeUrl);
   };
   if (!token) {
     if (location.pathname.startsWith('/join/')) localStorage.setItem('ks_next', location.pathname);
-    return location.replace('/');
+    return location.replace(homeUrl);
   }
 
   let user;

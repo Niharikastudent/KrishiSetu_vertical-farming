@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Harvest Circle · KrishiSetu – Farmer Collective Portal</title>
+  <meta name="description" content="Harvest Circle connects Indian farmers to pool harvest, agree on minimum price, and sell directly to food processors." />
+  <meta name="theme-color" content="#0d1b14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <main class="welcome">
+    <section class="hero" aria-label="About Harvest Circle">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:20px;">
+          <div class="brand">
+            <div class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22V10"/><path d="M12 10C12 6 9 4 5 4c0 4 2 6 7 6Z"/><path d="M12 13c0-3 2.5-5 7-5 0 4-2.5 6-7 5Z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="brand-name">Harvest<span>Circle</span></div>
+              <div class="brand-desc" data-i18n="brand_sub">KrishiSetu · Farmer Collective Portal</div>
+            </div>
+          </div>
+          <div id="hero-lang"></div>
+        </div>
+
+        <div class="demo-banner">
+          <span>⚠️</span>
+          <div>
+            <strong data-i18n="demo_badge_title">Demo Prototype · Sample Data:</strong>
+            <span data-i18n="demo_badge_desc">Active prototype for Indian Farmer Collectives. Buyer emails and replies run in simulation test mode.</span>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <h1 data-i18n="hero_title">Fair price for your harvest, <em>together as a collective</em></h1>
+          <p data-i18n="hero_desc">
+            Instead of selling alone at mandi distress prices, pool harvest with neighbouring farmers. Agree on one minimum price and send verified direct quotes to mills and wholesale buyers — with zero middlemen commissions.
+          </p>
+
+          <div class="features-list">
+            <div class="feat-item">
+              <div class="feat-icon">🌾</div>
+              <div class="feat-text">
+                <b data-i18n="feat_1_title">Crop Pooling (फसल एकत्रीकरण)</b>
+                <span data-i18n="feat_1_desc">Combine harvest of the same crop to build wholesale volume (50–500 quintals) attractive to large commercial processors.</span>
+              </div>
+            </div>
+            <div class="feat-item">
+              <div class="feat-icon">⚖️</div>
+              <div class="feat-text">
+                <b data-i18n="feat_2_title">Unanimous Price Voting (मूल्य सहमति)</b>
+                <span data-i18n="feat_2_desc">Vote in private group chat on minimum acceptable rate based on APMC mandi prices and Govt MSP. Every farmer must agree.</span>
+              </div>
+            </div>
+            <div class="feat-item">
+              <div class="feat-icon">🏭</div>
+              <div class="feat-text">
+                <b data-i18n="feat_3_title">Direct Mill Buyer Outreach (सीधी बिक्री)</b>
+                <span data-i18n="feat_3_desc">Send collective quotation directly to verified flour mills, dal processors, and food companies with pickup and quality details.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-foot">
+        <span data-i18n="footer_text">© Harvest Circle · KrishiSetu · Designed for Indian Agricultural Collectives</span>
+        <span style="font-size:0.75rem; color:var(--text-dim);">v1.2 Active Prototype</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:8px; padding-bottom:10px; border-bottom:1px solid var(--border);">
+          <span style="font-size:0.82rem; color:var(--text-muted); font-weight:500;" data-i18n="choose_lang">Language / भाषा</span>
+          <div id="card-lang"></div>
+        </div>
+
+        <div class="tabs" id="tabs" data-active="login" role="tablist">
+          <button class="tab active" id="tab-login" data-tab="login" role="tab" data-i18n="tab_login">Sign In</button>
+          <button class="tab" id="tab-register" data-tab="register" role="tab" data-i18n="tab_register">New Register</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="login-form" class="show" novalidate>
+          <div>
+            <h2 data-i18n="login_greeting">Welcome, Farmer 🙏</h2>
+            <p class="sub" data-i18n="login_sub">Sign in with your registered mobile number</p>
+          </div>
+          <div class="field">
+            <label for="l-phone" data-i18n="lbl_phone">Mobile Number (10 Digits)</label>
+            <input id="l-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="9876543210" maxlength="10" required />
+          </div>
+          <div class="field">
+            <label for="l-pass" data-i18n="lbl_password">Password</label>
+            <div class="pw">
+              <input id="l-pass" type="password" autocomplete="current-password" placeholder="••••••••" required />
+              <button type="button" data-toggle="l-pass" data-i18n="show_pw">Show</button>
+            </div>
+          </div>
+          <div class="error" id="login-error" role="alert"></div>
+          <button class="btn" id="login-btn" type="submit">
+            <span data-i18n="btn_signin">Sign In to Account →</span>
+          </button>
+          <p class="switch">
+            <a data-go="register" data-i18n="switch_to_reg">New to Harvest Circle? Create an account</a>
+          </p>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form id="register-form" novalidate>
+          <div>
+            <h2 data-i18n="register_greeting">Farmer Registration 🚜</h2>
+            <p class="sub" data-i18n="register_sub">Join your local farmer collective and access cooperative services</p>
+          </div>
+          <div class="field">
+            <label for="r-name" data-i18n="lbl_name">Full Name</label>
+            <input id="r-name" type="text" autocomplete="name" data-i18n-ph="ph_name" placeholder="e.g. Ramesh Patil / Sunita Devi" required />
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="r-phone" data-i18n="lbl_phone">Mobile Number</label>
+              <input id="r-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="9876543210" maxlength="10" required />
+            </div>
+            <div class="field">
+              <label for="r-pass" data-i18n="lbl_password">Password</label>
+              <div class="pw">
+                <input id="r-pass" type="password" autocomplete="new-password" data-i18n-ph="ph_pass" placeholder="Min 6 characters" required />
+                <button type="button" data-toggle="r-pass" data-i18n="show_pw">Show</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="r-state" data-i18n="lbl_state">State</label>
+              <select id="r-state" required><option value="" data-i18n="sel_state">Select State</option></select>
+            </div>
+            <div class="field">
+              <label for="r-village" data-i18n="lbl_village">Village / Mandi / Tehsil</label>
+              <input id="r-village" type="text" data-i18n-ph="ph_village" placeholder="e.g. Sehore / Ashta" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="r-land" data-i18n="lbl_land">Farm Land in Acres (Optional)</label>
+            <input id="r-land" type="number" min="0" step="0.5" data-i18n-ph="ph_land" placeholder="e.g. 4.5" />
+          </div>
+          <div class="field">
+            <label data-i18n="lbl_crops">Major Crops Grown</label>
+            <div class="crop-grid" id="crops"></div>
+          </div>
+          <div class="error" id="register-error" role="alert"></div>
+          <button class="btn" id="register-btn" type="submit">
+            <span data-i18n="btn_signup">Create Farmer Account →</span>
+          </button>
+          <p class="switch">
+            <a data-go="login" data-i18n="switch_to_login">Already registered? Sign in here</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="./js/i18n.js"></script>
+  <script src="./js/mock-api.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

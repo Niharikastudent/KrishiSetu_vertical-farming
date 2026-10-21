@@ -2,16 +2,17 @@
 
 > **Empowering Indian Farmer Collectives through Crop Pooling, Direct Buyer Outreach, Labour Marketplace & Farm Gear Exchange.**
 
+[![GitHub Pages](https://img.shields.io/badge/Live_on-GitHub_Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)](https://shreyasjoshi659-tech.github.io/krishisetu-ai/)
 [![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://temporary-rapid-bamboo-4bu7pek.vercel.app)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-krishisetu--ai-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shreyasjoshi659-tech/krishisetu-ai)
-[![Languages](https://img.shields.io/badge/Languages-7_Indian_Languages-d89932?style=for-the-badge)](https://temporary-rapid-bamboo-4bu7pek.vercel.app)
+[![Languages](https://img.shields.io/badge/Languages-7_Indian_Languages-d89932?style=for-the-badge)](https://shreyasjoshi659-tech.github.io/krishisetu-ai/)
 
 ---
 
 ## 🌐 Live Website & Demo Access
 
+- **GitHub Pages Live URL**: **[https://shreyasjoshi659-tech.github.io/krishisetu-ai/](https://shreyasjoshi659-tech.github.io/krishisetu-ai/)**
 - **Vercel Live URL**: **[https://temporary-rapid-bamboo-4bu7pek.vercel.app](https://temporary-rapid-bamboo-4bu7pek.vercel.app)**
-- **Claim this deployment to your Vercel account**: [Claim on Vercel](https://vercel.com/claim-deployment?code=6e21c92a-2ce2-4e9a-b28d-6f8216fb2416)
 - **Demo Farmer Login**:
   - **Mobile Number**: `9876543210`
   - **Password**: `password123`
