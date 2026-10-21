@@ -32,7 +32,7 @@ function rateLimit(req, res, next) {
 }
 
 app.post('/api/register', rateLimit, async (req, res) => {
-  const { name, phone, password, state, village, crops, landSize } = req.body || {};
+  const { name, phone, password, state, district, village, nearestMandi, landSize, farmCategory, irrigation, crops, equipment } = req.body || {};
   const ph = normPhone(phone);
   if (!name || String(name).trim().length < 2) return res.status(400).json({ error: 'Please enter your full name.' });
   if (!/^\+?\d{10,13}$/.test(ph)) return res.status(400).json({ error: 'Enter a valid mobile number (10 digits).' });
@@ -46,9 +46,14 @@ app.post('/api/register', rateLimit, async (req, res) => {
     phone: ph,
     passwordHash: await bcrypt.hash(String(password), 10),
     state,
+    district: String(district || '').trim(),
     village: String(village || '').trim(),
-    crops: Array.isArray(crops) ? crops.slice(0, 10) : [],
+    nearestMandi: String(nearestMandi || '').trim(),
     landSize: landSize ? Number(landSize) || null : null,
+    farmCategory: String(farmCategory || '').trim(),
+    irrigation: String(irrigation || '').trim(),
+    crops: Array.isArray(crops) ? crops.slice(0, 15) : [],
+    equipment: Array.isArray(equipment) ? equipment.slice(0, 10) : [],
     createdAt: new Date().toISOString(),
   };
   usersCol.rows.push(user);
@@ -75,6 +80,9 @@ app.use('/api', (_req, res) => res.status(404).json({ error: 'Not found.' }));
 app.use('/uploads', express.static(UPLOADS, { maxAge: '7d', setHeaders: (r) => r.setHeader('X-Content-Type-Options', 'nosniff') }));
 app.use(express.static(path.join(__dirname, 'public')));
 const appPage = (_req, res) => res.sendFile(path.join(__dirname, 'public', 'app.html'));
+const loginPage = (_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get('/login', loginPage);
+app.get('/register', loginPage);
 app.get('/app', appPage);
 app.get('/join/:code', appPage);
 

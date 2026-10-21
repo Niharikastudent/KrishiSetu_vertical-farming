@@ -6,7 +6,11 @@
     "passwordHash": "$2a$10$6gyP35bgA.BAOButormRne4J4FagMoWYEIeZ9p.m6cIjet20jEv8y",
     "state": "Madhya Pradesh",
     "village": "Sehore",
-    "crops": ["Wheat", "Soybean", "Gram"],
+    "crops": [
+      "Wheat",
+      "Soybean",
+      "Gram"
+    ],
     "landSize": 4.5,
     "createdAt": "2026-10-21T03:53:41.270Z"
   },
@@ -81,5 +85,41 @@
     "crops": [],
     "landSize": null,
     "createdAt": "2026-10-21T09:51:47.183Z"
+  },
+  {
+    "id": "c865be32-f1b9-476b-9bbb-95155b2b2030",
+    "name": "Suresh Patel",
+    "phone": "9988776655",
+    "passwordHash": "$2a$10$DuyLkD2X9tXlGBN/yo0UAOZWnZqIbv2gK5SXc8clwUcwgmWPLOgza",
+    "state": "Gujarat",
+    "village": "Anand",
+    "crops": [
+      "Cotton",
+      "Wheat"
+    ],
+    "landSize": null,
+    "createdAt": "2026-10-21T14:08:49.940Z"
+  },
+  {
+    "id": "546772de-9ea6-4179-9cf4-35d3b55236bc",
+    "name": "Balwinder Singh",
+    "phone": "9812345678",
+    "passwordHash": "$2a$10$in/bdxDl6WFNZ0eeuLsQ6evcVFqxShd/1e9KAWVkQOdL6WL3g332W",
+    "state": "Punjab",
+    "district": "Ludhiana",
+    "village": "Samrala",
+    "nearestMandi": "Khanna Grain Market",
+    "landSize": 8.5,
+    "farmCategory": "Medium (5 – 10 acres)",
+    "irrigation": "Canal irrigation",
+    "crops": [
+      "Wheat",
+      "Rice / Paddy"
+    ],
+    "equipment": [
+      "Tractor",
+      "Rotavator"
+    ],
+    "createdAt": "2026-10-21T14:16:21.889Z"
   }
 ]

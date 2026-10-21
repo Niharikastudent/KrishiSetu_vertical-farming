@@ -3,171 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>KrishiSetu (कृषि सेतु) – Farmer Collective Portal</title>
-  <meta name="description" content="KrishiSetu connects Indian farmers to pool harvest, agree on minimum price, and sell directly to food processors." />
-  <meta name="theme-color" content="#0d1b14" />
+  <title>KrishiSetu – Login or Register | Your Farmer Companion</title>
+  <meta name="description" content="KrishiSetu is your farmer companion. Log in or create a free account to get started." />
+  <meta name="theme-color" content="#0b1a12" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <main class="welcome">
-    <section class="hero" aria-label="About KrishiSetu">
-      <div>
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:20px;">
-          <div class="brand">
-            <div class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22V10"/><path d="M12 10C12 6 9 4 5 4c0 4 2 6 7 6Z"/><path d="M12 13c0-3 2.5-5 7-5 0 4-2.5 6-7 5Z"/>
-              </svg>
-            </div>
-            <div>
-              <div class="brand-name">Krishi<span>Setu</span></div>
-              <div class="brand-desc" data-i18n="brand_sub">कृषि सेतु · Farmer Collective Portal</div>
-            </div>
-          </div>
-          <div id="hero-lang"></div>
-        </div>
+    <section class="hero" aria-label="Welcome to KrishiSetu">
+      <div class="sun"></div>
+      <svg class="hero-art" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 150 Q200 90 400 140 T800 120 V300 H0Z" fill="#14402a" opacity=".8"/>
+        <path d="M0 190 Q220 140 420 185 T800 165 V300 H0Z" fill="#1b5a38" opacity=".9"/>
+        <path d="M0 240 Q200 205 400 235 T800 220 V300 H0Z" fill="#256f45"/>
+        <g stroke="#0e3322" stroke-width="2" fill="none" opacity=".6">
+          <path d="M0 262 Q200 235 400 258 T800 245"/><path d="M0 280 Q200 255 400 276 T800 266"/>
+        </g>
+      </svg>
 
-        <div class="demo-banner">
-          <span>⚠️</span>
-          <div>
-            <strong data-i18n="demo_badge_title">Demo Prototype · Sample Data:</strong>
-            <span data-i18n="demo_badge_desc">Active prototype for Indian Farmer Collectives. Buyer emails and replies run in simulation test mode.</span>
-          </div>
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#07130c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10"/><path d="M12 10C12 6 9 4 5 4c0 4 2 6 7 6Z"/><path d="M12 13c0-3 2.5-5 7-5 0 4-2.5 6-7 5Z"/></svg>
         </div>
-
-        <div class="hero-copy">
-          <h1 data-i18n="hero_title">Fair price for your harvest, <em>together as a collective</em></h1>
-          <p data-i18n="hero_desc">
-            Instead of selling alone at mandi distress prices, pool harvest with neighbouring farmers. Agree on one minimum price and send verified direct quotes to mills and wholesale buyers — with zero middlemen commissions.
-          </p>
-
-          <div class="features-list">
-            <div class="feat-item">
-              <div class="feat-icon">🌾</div>
-              <div class="feat-text">
-                <b data-i18n="feat_1_title">Crop Pooling (फसल एकत्रीकरण)</b>
-                <span data-i18n="feat_1_desc">Combine harvest of the same crop to build wholesale volume (50–500 quintals) attractive to large commercial processors.</span>
-              </div>
-            </div>
-            <div class="feat-item">
-              <div class="feat-icon">⚖️</div>
-              <div class="feat-text">
-                <b data-i18n="feat_2_title">Unanimous Price Voting (मूल्य सहमति)</b>
-                <span data-i18n="feat_2_desc">Vote in private group chat on minimum acceptable rate based on APMC mandi prices and Govt MSP. Every farmer must agree.</span>
-              </div>
-            </div>
-            <div class="feat-item">
-              <div class="feat-icon">🏭</div>
-              <div class="feat-text">
-                <b data-i18n="feat_3_title">Direct Mill Buyer Outreach (सीधी बिक्री)</b>
-                <span data-i18n="feat_3_desc">Send collective quotation directly to verified flour mills, dal processors, and food companies with pickup and quality details.</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="brand-name">Krishi<span>Setu</span></div>
       </div>
 
-      <div class="hero-foot">
-        <span data-i18n="footer_text">© KrishiSetu · Designed for Indian Agricultural Collectives</span>
-        <span style="font-size:0.75rem; color:var(--text-dim);">v1.2 Active Prototype</span>
+      <div class="hero-copy">
+        <h1>The bridge between <em>farmers</em> and a better harvest.</h1>
+        <p>Your companion for the field — from sowing to selling. Smart, simple and built for the way you farm.</p>
+        <div class="chips">
+          <span class="chip">🌾 Crop guidance</span>
+          <span class="chip">⛅ Weather</span>
+          <span class="chip">💰 Market prices</span>
+          <span class="chip">🤝 Community</span>
+        </div>
       </div>
+      <div class="hero-foot">© KrishiSetu · Made for Indian farmers</div>
     </section>
 
     <section class="panel">
       <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:8px; padding-bottom:10px; border-bottom:1px solid var(--border);">
-          <span style="font-size:0.82rem; color:var(--text-muted); font-weight:500;" data-i18n="choose_lang">Language / भाषा</span>
-          <div id="card-lang"></div>
-        </div>
-
         <div class="tabs" id="tabs" data-active="login" role="tablist">
-          <button class="tab active" id="tab-login" data-tab="login" role="tab" data-i18n="tab_login">Sign In</button>
-          <button class="tab" id="tab-register" data-tab="register" role="tab" data-i18n="tab_register">New Register</button>
+          <span class="tab-pill"></span>
+          <button class="tab active" id="tab-login" data-tab="login" role="tab">Login</button>
+          <button class="tab" id="tab-register" data-tab="register" role="tab">Register</button>
         </div>
 
-        <!-- LOGIN FORM -->
+        <!-- LOGIN -->
         <form id="login-form" class="show" novalidate>
-          <div>
-            <h2 data-i18n="login_greeting">Welcome, Farmer 🙏</h2>
-            <p class="sub" data-i18n="login_sub">Sign in with your registered mobile number</p>
-          </div>
-          <div class="field">
-            <label for="l-phone" data-i18n="lbl_phone">Mobile Number (10 Digits)</label>
-            <input id="l-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="9876543210" maxlength="10" required />
-          </div>
-          <div class="field">
-            <label for="l-pass" data-i18n="lbl_password">Password</label>
-            <div class="pw">
-              <input id="l-pass" type="password" autocomplete="current-password" placeholder="••••••••" required />
-              <button type="button" data-toggle="l-pass" data-i18n="show_pw">Show</button>
-            </div>
-          </div>
+          <div><h2>Namaste 🙏</h2><p class="sub">Welcome back. Log in to continue.</p></div>
+          <div class="field"><label for="l-phone">Mobile number</label>
+            <input id="l-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="98765 43210" required /></div>
+          <div class="field"><label for="l-pass">Password</label>
+            <div class="pw"><input id="l-pass" type="password" autocomplete="current-password" placeholder="••••••••" required />
+              <button type="button" data-toggle="l-pass">Show</button></div></div>
           <div class="error" id="login-error" role="alert"></div>
-          <button class="btn" id="login-btn" type="submit">
-            <span data-i18n="btn_signin">Sign In to Account →</span>
-          </button>
-          <p class="switch">
-            <a data-go="register" data-i18n="switch_to_reg">New to KrishiSetu? Create an account</a>
-          </p>
+          <button class="btn" id="login-btn" type="submit">Log in</button>
+          <p class="switch">New to KrishiSetu? <a data-go="register">Create an account</a></p>
+          <p style="text-align: center; margin-top: 14px; font-size: 0.82rem; color: var(--muted);">Demo login: <button type="button" id="fill-demo" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; color: var(--gold); cursor: pointer; font-size: 0.8rem;">98765 43210 / password123</button></p>
         </form>
 
-        <!-- REGISTER FORM -->
+        <!-- REGISTER -->
         <form id="register-form" novalidate>
-          <div>
-            <h2 data-i18n="register_greeting">Farmer Registration 🚜</h2>
-            <p class="sub" data-i18n="register_sub">Join your local farmer collective and access cooperative services</p>
+          <div><h2>Join KrishiSetu 🌱</h2><p class="sub">Create your verified farmer account.</p></div>
+
+          <div class="form-section-title">Farmer Identification</div>
+          <div class="field"><label for="r-name">Full name</label>
+            <input id="r-name" type="text" autocomplete="name" placeholder="e.g. Ramesh Patil" required /></div>
+          <div class="row">
+            <div class="field"><label for="r-phone">Mobile number</label>
+              <input id="r-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="98765 43210" maxlength="10" required /></div>
+            <div class="field"><label for="r-pass">Password</label>
+              <div class="pw"><input id="r-pass" type="password" autocomplete="new-password" placeholder="Min 6 chars" required />
+                <button type="button" data-toggle="r-pass">Show</button></div></div>
           </div>
-          <div class="field">
-            <label for="r-name" data-i18n="lbl_name">Full Name</label>
-            <input id="r-name" type="text" autocomplete="name" data-i18n-ph="ph_name" placeholder="e.g. Ramesh Patil / Sunita Devi" required />
+
+          <div class="form-section-title">Location &amp; APMC Mandi</div>
+          <div class="row">
+            <div class="field"><label for="r-state">State</label>
+              <select id="r-state" required><option value="">Select state</option></select></div>
+            <div class="field"><label for="r-district">District / Tehsil</label>
+              <input id="r-district" type="text" placeholder="e.g. Sehore" required /></div>
           </div>
           <div class="row">
-            <div class="field">
-              <label for="r-phone" data-i18n="lbl_phone">Mobile Number</label>
-              <input id="r-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="9876543210" maxlength="10" required />
-            </div>
-            <div class="field">
-              <label for="r-pass" data-i18n="lbl_password">Password</label>
-              <div class="pw">
-                <input id="r-pass" type="password" autocomplete="new-password" data-i18n-ph="ph_pass" placeholder="Min 6 characters" required />
-                <button type="button" data-toggle="r-pass" data-i18n="show_pw">Show</button>
-              </div>
-            </div>
+            <div class="field"><label for="r-village">Village / Gram Panchayat</label>
+              <input id="r-village" type="text" placeholder="e.g. Ashta" /></div>
+            <div class="field"><label for="r-mandi">Nearest APMC Mandi</label>
+              <input id="r-mandi" type="text" placeholder="e.g. Sehore Mandi" /></div>
           </div>
+
+          <div class="form-section-title">Land &amp; Cultivation Profile</div>
           <div class="row">
-            <div class="field">
-              <label for="r-state" data-i18n="lbl_state">State</label>
-              <select id="r-state" required><option value="" data-i18n="sel_state">Select State</option></select>
-            </div>
-            <div class="field">
-              <label for="r-village" data-i18n="lbl_village">Village / Mandi / Tehsil</label>
-              <input id="r-village" type="text" data-i18n-ph="ph_village" placeholder="e.g. Sehore / Ashta" />
-            </div>
+            <div class="field"><label for="r-land">Land holding (acres)</label>
+              <input id="r-land" type="number" min="0" step="0.5" placeholder="e.g. 4.5" /></div>
+            <div class="field"><label for="r-category">Farmer category</label>
+              <select id="r-category">
+                <option value="">Select category</option>
+                <option value="Marginal (< 2.5 acres)">Marginal (&lt; 2.5 acres)</option>
+                <option value="Small (2.5 – 5 acres)">Small (2.5 – 5 acres)</option>
+                <option value="Medium (5 – 10 acres)">Medium (5 – 10 acres)</option>
+                <option value="Large (> 10 acres)">Large (&gt; 10 acres)</option>
+              </select></div>
           </div>
+          <div class="field"><label for="r-irrigation">Primary irrigation source</label>
+            <select id="r-irrigation">
+              <option value="">Select irrigation source</option>
+              <option value="Borewell / Tube well">Borewell / Tube well</option>
+              <option value="Canal irrigation">Canal irrigation</option>
+              <option value="Rainfed (Monsoon dependant)">Rainfed (Monsoon dependant)</option>
+              <option value="Drip / Sprinkler system">Drip / Sprinkler system</option>
+              <option value="Pond / River / Well">Pond / River / Well</option>
+            </select></div>
+
+          <div class="form-section-title">Major Crops Cultivated</div>
           <div class="field">
-            <label for="r-land" data-i18n="lbl_land">Farm Land in Acres (Optional)</label>
-            <input id="r-land" type="number" min="0" step="0.5" data-i18n-ph="ph_land" placeholder="e.g. 4.5" />
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_crops">Major Crops Grown</label>
             <div class="crop-grid" id="crops"></div>
           </div>
+
+          <div class="form-section-title">Farm Machinery &amp; Equipment</div>
+          <div class="field">
+            <div class="crop-grid" id="equipment"></div>
+          </div>
+
           <div class="error" id="register-error" role="alert"></div>
-          <button class="btn" id="register-btn" type="submit">
-            <span data-i18n="btn_signup">Create Farmer Account →</span>
-          </button>
-          <p class="switch">
-            <a data-go="login" data-i18n="switch_to_login">Already registered? Sign in here</a>
-          </p>
+          <button class="btn" id="register-btn" type="submit">Create farmer account</button>
+          <p class="switch">Already registered? <a data-go="login">Log in</a></p>
         </form>
       </div>
     </section>
   </main>
-  <script src="./js/i18n.js"></script>
-  <script src="./js/mock-api.js"></script>
-  <script src="./js/auth.js"></script>
+  <script src="/js/auth.js"></script>
 </body>
 </html>

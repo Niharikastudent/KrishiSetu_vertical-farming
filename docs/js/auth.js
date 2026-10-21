@@ -129,6 +129,12 @@
     }, $('login-btn'), $('login-error'));
   });
 
+  const EQUIPMENT = ['Tractor', 'Trolley / Trailer', 'Harvester', 'Rotavator', 'Power Tiller', 'Sprayer Pump', 'Thresher', 'None / Renting'];
+  const eqEl = $('equipment');
+  if (eqEl) {
+    eqEl.innerHTML = EQUIPMENT.map((eq) => `<label class="crop"><input type="checkbox" value="${eq}"><span>${eq}</span></label>`).join('');
+  }
+
   $('register-form').addEventListener('submit', (e) => {
     e.preventDefault();
     submit('/api/register', {
@@ -136,9 +142,14 @@
       phone: $('r-phone').value,
       password: $('r-pass').value,
       state: $('r-state').value,
+      district: $('r-district').value,
       village: $('r-village').value,
+      nearestMandi: $('r-mandi').value,
       landSize: $('r-land').value,
-      crops: [...document.querySelectorAll('#crops input:checked')].map((c) => c.value)
+      farmCategory: $('r-category').value,
+      irrigation: $('r-irrigation').value,
+      crops: [...document.querySelectorAll('#crops input:checked')].map((c) => c.value),
+      equipment: [...document.querySelectorAll('#equipment input:checked')].map((c) => c.value)
     }, $('register-btn'), $('register-error'));
   });
 })();

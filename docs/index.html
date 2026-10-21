@@ -48,21 +48,21 @@
             <div class="feat-item">
               <div class="feat-icon">🌾</div>
               <div class="feat-text">
-                <b data-i18n="feat_1_title">Crop Pooling (फसल एकत्रीकरण)</b>
+                <b data-i18n="feat_1_title">Crop Pooling</b>
                 <span data-i18n="feat_1_desc">Combine harvest of the same crop to build wholesale volume (50–500 quintals) attractive to large commercial processors.</span>
               </div>
             </div>
             <div class="feat-item">
               <div class="feat-icon">⚖️</div>
               <div class="feat-text">
-                <b data-i18n="feat_2_title">Unanimous Price Voting (मूल्य सहमति)</b>
-                <span data-i18n="feat_2_desc">Vote in private group chat on minimum acceptable rate based on APMC mandi prices and Govt MSP. Every farmer must agree.</span>
+                <b data-i18n="feat_2_title">Unanimous Price Agreement</b>
+                <span data-i18n="feat_2_desc">Agree in private group chat on minimum acceptable rate based on APMC mandi prices and Govt MSP. Every farmer must agree.</span>
               </div>
             </div>
             <div class="feat-item">
               <div class="feat-icon">🏭</div>
               <div class="feat-text">
-                <b data-i18n="feat_3_title">Direct Mill Buyer Outreach (सीधी बिक्री)</b>
+                <b data-i18n="feat_3_title">Direct Mill Buyer Outreach</b>
                 <span data-i18n="feat_3_desc">Send collective quotation directly to verified flour mills, dal processors, and food companies with pickup and quality details.</span>
               </div>
             </div>
@@ -79,7 +79,7 @@
     <section class="panel">
       <div class="card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:8px; padding-bottom:10px; border-bottom:1px solid var(--border);">
-          <span style="font-size:0.82rem; color:var(--text-muted); font-weight:500;" data-i18n="choose_lang">Language / भाषा</span>
+          <span style="font-size:0.82rem; color:var(--text-muted); font-weight:500;" data-i18n="choose_lang">Language</span>
           <div id="card-lang"></div>
         </div>
 
@@ -117,12 +117,14 @@
         <!-- REGISTER FORM -->
         <form id="register-form" novalidate>
           <div>
-            <h2 data-i18n="register_greeting">Farmer Registration 🚜</h2>
+            <h2 data-i18n="register_greeting">Farmer Registration 🌱</h2>
             <p class="sub" data-i18n="register_sub">Join your local farmer collective and access cooperative services</p>
           </div>
+
+          <div class="form-section-title">Farmer Identification</div>
           <div class="field">
             <label for="r-name" data-i18n="lbl_name">Full Name</label>
-            <input id="r-name" type="text" autocomplete="name" data-i18n-ph="ph_name" placeholder="e.g. Ramesh Patil / Sunita Devi" required />
+            <input id="r-name" type="text" autocomplete="name" placeholder="e.g. Ramesh Patil" required />
           </div>
           <div class="row">
             <div class="field">
@@ -132,29 +134,73 @@
             <div class="field">
               <label for="r-pass" data-i18n="lbl_password">Password</label>
               <div class="pw">
-                <input id="r-pass" type="password" autocomplete="new-password" data-i18n-ph="ph_pass" placeholder="Min 6 characters" required />
+                <input id="r-pass" type="password" autocomplete="new-password" placeholder="Min 6 characters" required />
                 <button type="button" data-toggle="r-pass" data-i18n="show_pw">Show</button>
               </div>
             </div>
           </div>
+
+          <div class="form-section-title">Location &amp; APMC Mandi</div>
           <div class="row">
             <div class="field">
               <label for="r-state" data-i18n="lbl_state">State</label>
               <select id="r-state" required><option value="" data-i18n="sel_state">Select State</option></select>
             </div>
             <div class="field">
-              <label for="r-village" data-i18n="lbl_village">Village / Mandi / Tehsil</label>
-              <input id="r-village" type="text" data-i18n-ph="ph_village" placeholder="e.g. Sehore / Ashta" />
+              <label for="r-district">District / Tehsil</label>
+              <input id="r-district" type="text" placeholder="e.g. Sehore" required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="r-village" data-i18n="lbl_village">Village / Gram Panchayat</label>
+              <input id="r-village" type="text" placeholder="e.g. Ashta" />
+            </div>
+            <div class="field">
+              <label for="r-mandi">Nearest APMC Mandi</label>
+              <input id="r-mandi" type="text" placeholder="e.g. Sehore Mandi" />
+            </div>
+          </div>
+
+          <div class="form-section-title">Land &amp; Cultivation Profile</div>
+          <div class="row">
+            <div class="field">
+              <label for="r-land" data-i18n="lbl_land">Land Holding (Acres)</label>
+              <input id="r-land" type="number" min="0" step="0.5" placeholder="e.g. 4.5" />
+            </div>
+            <div class="field">
+              <label for="r-category">Farmer Category</label>
+              <select id="r-category">
+                <option value="">Select Category</option>
+                <option value="Marginal (< 2.5 acres)">Marginal (&lt; 2.5 acres)</option>
+                <option value="Small (2.5 – 5 acres)">Small (2.5 – 5 acres)</option>
+                <option value="Medium (5 – 10 acres)">Medium (5 – 10 acres)</option>
+                <option value="Large (> 10 acres)">Large (&gt; 10 acres)</option>
+              </select>
             </div>
           </div>
           <div class="field">
-            <label for="r-land" data-i18n="lbl_land">Farm Land in Acres (Optional)</label>
-            <input id="r-land" type="number" min="0" step="0.5" data-i18n-ph="ph_land" placeholder="e.g. 4.5" />
+            <label for="r-irrigation">Primary Irrigation Source</label>
+            <select id="r-irrigation">
+              <option value="">Select Irrigation Source</option>
+              <option value="Borewell / Tube well">Borewell / Tube well</option>
+              <option value="Canal irrigation">Canal irrigation</option>
+              <option value="Rainfed (Monsoon dependant)">Rainfed (Monsoon dependant)</option>
+              <option value="Drip / Sprinkler system">Drip / Sprinkler system</option>
+              <option value="Pond / River / Well">Pond / River / Well</option>
+            </select>
           </div>
+
+          <div class="form-section-title">Major Crops Cultivated</div>
           <div class="field">
-            <label data-i18n="lbl_crops">Major Crops Grown</label>
             <div class="crop-grid" id="crops"></div>
           </div>
+
+          <div class="form-section-title">Farm Machinery &amp; Equipment</div>
+          <div class="field">
+            <div class="crop-grid" id="equipment"></div>
+          </div>
+
           <div class="error" id="register-error" role="alert"></div>
           <button class="btn" id="register-btn" type="submit">
             <span data-i18n="btn_signup">Create Farmer Account →</span>

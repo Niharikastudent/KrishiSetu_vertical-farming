@@ -57,45 +57,21 @@ window.Gear = (() => {
   }
 
   function tabs(on) {
-    const t = [['market', '🔍 उपकरण खोजें · Browse Gear', '#/gear'], ['mine', '📋 मेरी लिस्टिंग · My Listings', '#/gear/mine']];
+    const t = [['market', '🛒 Browse', '#/gear'], ['mine', '📋 My listings', '#/gear/mine']];
     return `<div class="seg ltabs">${t.map(([k, l, h]) => `<button type="button" class="${k === on ? 'on' : ''}" onclick="location.hash='${h}'">${l}</button>`).join('')}</div>`;
   }
 
   // ================= BROWSE =================
   async function market(root) {
     root.innerHTML = `
-      <div class="demo-banner">
-        <span>⚠️</span>
-        <div>
-          <strong>डेमो उपकरण एक्सचेंज (Sample Farm Gear):</strong>
-          <span>ट्रैक्टर, कल्टीवेटर व औजार किराये पर लेने या देने की यह सेवा प्रोटोटाइप परीक्षण मोड में है।</span>
-        </div>
-      </div>
       <section class="mkt-hero gear-hero">
-        <div class="mh-text">
-          <span class="mh-eye">🚜 कृषि यंत्र व उपकरण · Farm Gear Exchange</span>
-          <h1>कृषि मशीनें व औजार किराए पर लें या बेचें</h1>
-          <p>ट्रैक्टर, रोटावेटर, रीपर, कल्टीवेटर और स्प्रेयर अपने नजदीकी किसानों से सीधे लें — फोन व व्हाट्सएप संपर्क उपलब्ध।</p>
-        </div>
-        <form class="mh-search" id="sf" role="search">
-          <span>🔍</span>
-          <input id="f-q" placeholder="उपकरण खोजें: महिंद्रा ट्रैक्टर, रोटावेटर, रीपर, कल्टीवेटर…" autocomplete="off" />
-          <button class="btn sm" type="submit">खोजें · Search</button>
-        </form>
-        <div class="mh-chips" id="qc">
-          <button type="button" data-s="" class="on">सभी (All)</button>
-          ${CATS.map(([c, i]) => `<button type="button" data-s="${esc(c)}">${esc(c)}</button>`).join('')}
-        </div>
+        <div class="mh-text"><span class="mh-eye">🚜 Farm Gear Exchange</span><h1>Rent or buy farm machines &amp; tools</h1>
+          <p>Tractors, tillers, sprayers, ploughs and more from farmers around you — with price and contact upfront.</p></div>
+        <div class="cat-scroll" id="qc" aria-label="Choose a machine type"><button type="button" data-s="" class="cat-tile on"><span class="ci">🧺</span><span class="cn">All machines</span></button>${CATS.map(([c, i]) => `<button type="button" data-s="${esc(c)}" class="cat-tile"><span class="ci">${i}</span><span class="cn">${esc(c)}</span></button>`).join('')}</div>
+        <form class="mh-search" id="sf" role="search" hidden><span>🔍</span><input id="f-q" placeholder="Can't find it? Type the machine name…" autocomplete="off" /><button class="btn" type="submit">Search</button></form>
       </section>
-      <div class="mkt-bar">
-        ${tabs('market')}
-        <a class="btn sm" href="#/gear/new" id="post-ad">＋ उपकरण जोड़ें · List Gear</a>
-      </div>
-      <div class="seg" id="tseg">
-        <button type="button" data-t="" class="on">सभी (All)</button>
-        <button type="button" data-t="rent">🔑 केवल किराए हेतु (For Rent)</button>
-        <button type="button" data-t="sale">🏷️ बिक्री हेतु (For Sale)</button>
-      </div>
+      <div class="mkt-bar">${tabs('market')}<a class="btn" href="#/gear/new" id="post-ad">＋ Post a listing</a></div>
+      <div class="seg" id="tseg"><button type="button" data-t="" class="on">All</button><button type="button" data-t="rent">🔑 For rent</button><button type="button" data-t="sale">🏷️ For sale</button></div>
       <section class="filters lf">
         <select id="f-state"><option value="">All states</option>${STATES.map((s) => `<option ${s === K().user.state ? 'selected' : ''}>${s}</option>`).join('')}</select>
         <input id="f-dist" placeholder="District / area" />
@@ -119,7 +95,16 @@ window.Gear = (() => {
     $('#f-q').addEventListener('input', debounce);
     root.querySelectorAll('.lf input').forEach((x) => x.addEventListener('input', debounce));
     root.querySelectorAll('.lf select').forEach((x) => x.addEventListener('change', load));
-    $('#qc').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; cat = b.dataset.s; root.querySelectorAll('#qc button').forEach((x) => x.classList.toggle('on', x === b)); load(); });
+    $('#qc').addEventListener('click', (e) => {
+      const b = e.target.closest('button'); if (!b) return;
+      cat = b.dataset.s;
+      root.querySelectorAll('#qc button').forEach((x) => x.classList.toggle('on', x === b));
+      const other = cat === 'Other';
+      $('#sf').hidden = !other;
+      if (other) { setTimeout(() => { $('#sf').scrollIntoView({ behavior: 'smooth', block: 'nearest' }); $('#f-q').focus(); }, 50); }
+      else $('#f-q').value = '';
+      load();
+    });
     $('#tseg').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; type = b.dataset.t; root.querySelectorAll('#tseg button').forEach((x) => x.classList.toggle('on', x === b)); load(); });
     $('#grid').addEventListener('click', (e) => { const c = e.target.closest('.gcard'); if (c) detail(list.find((i) => i.id === c.dataset.id)); });
     $('#grid').addEventListener('keydown', (e) => { const c = e.target.closest('.gcard'); if (c && e.key === 'Enter') detail(list.find((i) => i.id === c.dataset.id)); });

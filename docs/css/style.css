@@ -225,6 +225,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .card h2 { margin: 8px 0 2px; font-size: 1.45rem; color: var(--text); }
 .card .sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 18px; }
 
+.form-section-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.8px;
+  color: var(--gold); font-weight: 700; margin-top: 10px; margin-bottom: -2px;
+}
+.form-section-title::after {
+  content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08);
+}
+
 form { display: none; flex-direction: column; gap: 14px; }
 form.show { display: flex; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
