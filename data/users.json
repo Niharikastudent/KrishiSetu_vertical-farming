@@ -1,0 +1,85 @@
+[
+  {
+    "id": "b7875485-c65e-4c4a-a4cf-a62a93c504ae",
+    "name": "Ramesh Patil",
+    "phone": "9876543210",
+    "passwordHash": "$2a$10$6gyP35bgA.BAOButormRne4J4FagMoWYEIeZ9p.m6cIjet20jEv8y",
+    "state": "Madhya Pradesh",
+    "village": "Sehore",
+    "crops": ["Wheat", "Soybean", "Gram"],
+    "landSize": 4.5,
+    "createdAt": "2026-10-21T03:53:41.270Z"
+  },
+  {
+    "id": "demo-farmer-alt",
+    "name": "Ramesh Patil",
+    "phone": "9854821142",
+    "passwordHash": "$2a$10$6gyP35bgA.BAOButormRne4J4FagMoWYEIeZ9p.m6cIjet20jEv8y",
+    "state": "Madhya Pradesh",
+    "village": "Sehore",
+    "crops": [],
+    "landSize": null,
+    "createdAt": "2026-10-21T03:53:41.270Z"
+  },
+  {
+    "id": "de993284-0698-413f-b934-fea531d0f54e",
+    "name": "Sita Devi",
+    "phone": "9754821142",
+    "passwordHash": "$2a$10$.aTmaSu8WrI1TWmujWlvhuOAw2H4Uk3IAYZsHky0XaccFtrK1PFK6",
+    "state": "Madhya Pradesh",
+    "village": "Ashta",
+    "crops": [],
+    "landSize": null,
+    "createdAt": "2026-10-21T03:53:41.340Z"
+  },
+  {
+    "id": "68bb4de1-2385-4e9f-9388-ddf4a8c3748a",
+    "name": "Shreyas Joshi",
+    "phone": "7337819007",
+    "passwordHash": "$2a$10$EPqmvtY.nVrWV.n518AoZeUwm7u9NevyAgqCxwl/D/QuoEq0xDItu",
+    "state": "Karnataka",
+    "village": "",
+    "crops": [
+      "Rice",
+      "Wheat",
+      "Cotton",
+      "Sugarcane",
+      "Maize"
+    ],
+    "landSize": null,
+    "createdAt": "2026-10-21T09:20:43.188Z"
+  },
+  {
+    "id": "58265b55-bac9-42f6-bbfa-f49b7310019e",
+    "name": "Ramu Worker",
+    "phone": "9800826186",
+    "passwordHash": "$2a$10$9LeQk0ZC7agdNqxd/tlwNeTPhODxngQMVeguqWgNxXo3VIPbBKzzK",
+    "state": "Gujarat",
+    "village": "",
+    "crops": [],
+    "landSize": null,
+    "createdAt": "2026-10-21T09:27:06.320Z"
+  },
+  {
+    "id": "dbadec81-f936-4333-8376-a666d37d5b23",
+    "name": "Farmer Fa",
+    "phone": "9700826186",
+    "passwordHash": "$2a$10$fRLgvd1veIywDUU.poT0/uzCqfZupKog.6bQgbCDq6tmHT0Sm/9La",
+    "state": "Gujarat",
+    "village": "",
+    "crops": [],
+    "landSize": null,
+    "createdAt": "2026-10-21T09:27:06.421Z"
+  },
+  {
+    "id": "d5ff0244-e5ff-46d1-bd3d-8c7762aa204e",
+    "name": "Gear Tester",
+    "phone": "9676306992",
+    "passwordHash": "$2a$10$4oGrm0oQU0To8zAP3xQhj.r1B7/bgEQbqhuGpAKIhvXovwTqAIyJu",
+    "state": "Punjab",
+    "village": "",
+    "crops": [],
+    "landSize": null,
+    "createdAt": "2026-10-21T09:51:47.183Z"
+  }
+]

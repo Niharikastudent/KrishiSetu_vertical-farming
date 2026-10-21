@@ -1,0 +1,22 @@
+[
+  {
+    "id": "8537d530-8441-407a-890a-0c58017cc748",
+    "userId": "58265b55-bac9-42f6-bbfa-f49b7310019e",
+    "createdAt": "2026-10-21T09:27:06.432Z",
+    "headline": "",
+    "description": "Experienced weeder",
+    "conditions": "Lunch needed",
+    "skills": [
+      "Weeding",
+      "Ploughing"
+    ],
+    "rateType": "day",
+    "rate": 500,
+    "state": "Gujarat",
+    "district": "",
+    "experience": 0,
+    "travelKm": 0,
+    "available": true,
+    "updatedAt": "2026-10-21T09:27:06.432Z"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ddd37246-816c-468e-a988-662e61358559",
+    "fromId": "dbadec81-f936-4333-8376-a666d37d5b23",
+    "toId": "58265b55-bac9-42f6-bbfa-f49b7310019e",
+    "profileId": "8537d530-8441-407a-890a-0c58017cc748",
+    "job": "Weeding",
+    "message": "Need you 2 days",
+    "startDate": "",
+    "duration": "",
+    "location": "",
+    "offer": null,
+    "status": "accepted",
+    "createdAt": "2026-10-21T09:27:06.445Z",
+    "respondedAt": "2026-10-21T09:27:06.459Z"
+  }
+]

@@ -11,12 +11,15 @@
 
 ## 🌐 Live Website & Demo Access
 
-- **GitHub Pages Live URL**: **[https://shreyasjoshi659-tech.github.io/krishisetu-ai/](https://shreyasjoshi659-tech.github.io/krishisetu-ai/)**
-- **Vercel Live URL**: **[https://temporary-rapid-bamboo-4bu7pek.vercel.app](https://temporary-rapid-bamboo-4bu7pek.vercel.app)**
+- **Live Vercel Application**: **[https://temporary-rapid-bamboo-4bu7pek.vercel.app](https://temporary-rapid-bamboo-4bu7pek.vercel.app)**
+- **GitHub Pages Permanent URL**: **[https://shreyasjoshi659-tech.github.io/krishisetu-ai/](https://shreyasjoshi659-tech.github.io/krishisetu-ai/)**
+- **Permanent Vercel Integration (1-Click)**:
+  - [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fshreyasjoshi659-tech%2Fkrishisetu-ai)
+  - Claim active deployment: [Claim to Vercel Account](https://vercel.com/claim-deployment?code=6e21c92a-2ce2-4e9a-b28d-6f8216fb2416)
 - **Demo Farmer Login**:
   - **Mobile Number**: `9876543210`
   - **Password**: `password123`
-  - *(Or click **"New Register"** to create a custom farmer account)*
+  - *(Or click **"New Register"** to create a custom farmer account in any state)*
 
 ---
 

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1ea2ff2a-8e89-4d99-8a35-72257b757ff4",
+    "userId": "d5ff0244-e5ff-46d1-bd3d-8c7762aa204e",
+    "status": "available",
+    "createdAt": "2026-10-21T09:51:47.259Z",
+    "title": "Mahindra 575 Tractor",
+    "category": "Tractors",
+    "type": "both",
+    "brand": "",
+    "year": null,
+    "condition": "good",
+    "description": "",
+    "rentRate": 900,
+    "rentUnit": "hour",
+    "deposit": null,
+    "operatorIncluded": false,
+    "fuelIncluded": false,
+    "salePrice": 450000,
+    "negotiable": true,
+    "state": "Punjab",
+    "district": "Ludhiana",
+    "village": "",
+    "contactPhone": "9876543210",
+    "whatsapp": false,
+    "photos": [
+      "/uploads/6859b126-8e22-4dac-9ee7-687dd56149ed.png"
+    ]
+  }
+]

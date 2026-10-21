@@ -1,5 +1,6 @@
 node_modules/
 .env
-data/
-
+data/.secret
+data/uploads/
 .vercel
+scratch*.ps1

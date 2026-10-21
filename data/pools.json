@@ -1,0 +1,89 @@
+[
+  {
+    "id": "4762173b-9f7f-45bc-ad42-a865d4a845a4",
+    "code": "4B7LG6",
+    "name": "Sehore Wheat Pool",
+    "crop": "Wheat",
+    "variety": "",
+    "harvestDate": "2026-10-31",
+    "state": "Madhya Pradesh",
+    "district": "Sehore",
+    "description": "",
+    "visibility": "public",
+    "status": "quote_sent",
+    "creatorId": "b7875485-c65e-4c4a-a4cf-a62a93c504ae",
+    "members": [
+      {
+        "userId": "b7875485-c65e-4c4a-a4cf-a62a93c504ae",
+        "quantity": 40,
+        "joinedAt": "2026-10-21T03:53:41.359Z"
+      },
+      {
+        "userId": "de993284-0698-413f-b934-fea531d0f54e",
+        "quantity": 25,
+        "joinedAt": "2026-10-21T03:53:41.375Z"
+      }
+    ],
+    "messages": [
+      {
+        "id": "eb0e0431-ce62-4c3c-bada-548ac886d086",
+        "type": "system",
+        "text": "🌱 Ramesh Patil created the pool. Invite fellow farmers using the invite link, then agree on a price here.",
+        "at": "2026-10-21T03:53:41.359Z"
+      },
+      {
+        "id": "c9e1b11d-5942-485f-9a06-4fbcd145e483",
+        "type": "system",
+        "text": "👋 Sita Devi joined with 25 quintals. Pool total: 65 quintals.",
+        "at": "2026-10-21T03:53:41.375Z"
+      },
+      {
+        "id": "423325b4-6d34-4fe5-b17e-790544bfae4e",
+        "type": "text",
+        "userId": "de993284-0698-413f-b934-fea531d0f54e",
+        "text": "Namaste all",
+        "at": "2026-10-21T03:53:41.406Z"
+      },
+      {
+        "id": "c5121ad8-1b44-4f12-8164-b96c90475bdc",
+        "type": "proposal",
+        "userId": "b7875485-c65e-4c4a-a4cf-a62a93c504ae",
+        "price": 2450,
+        "votes": {
+          "b7875485-c65e-4c4a-a4cf-a62a93c504ae": true,
+          "de993284-0698-413f-b934-fea531d0f54e": true
+        },
+        "status": "accepted",
+        "at": "2026-10-21T03:53:41.421Z"
+      },
+      {
+        "id": "1c2c5923-16e8-4914-b5c0-4503a472a3f4",
+        "type": "system",
+        "text": "✅ All 2 farmer(s) agreed on ₹2,450 per quintal. The coordinator can now send the pool's offer to buyers.",
+        "at": "2026-10-21T03:53:41.450Z"
+      },
+      {
+        "id": "d7263c1e-a97e-4087-8f68-d378d9a0a9ff",
+        "type": "system",
+        "text": "📧 Offer of ₹2,450/quintal for 65 quintals was emailed to Sharma Mills. Replies will appear here.",
+        "at": "2026-10-21T03:53:45.867Z"
+      }
+    ],
+    "emails": [
+      {
+        "id": "b500150c-970b-4e52-9eed-64bc694a935f",
+        "direction": "out",
+        "name": "Sharma Mills",
+        "email": "buyer@example.com",
+        "subject": "[KS-4B7LG6] 65 quintals of Wheat available at ₹2,450/quintal – KrishiSetu Farmer Pool",
+        "body": "Dear Sharma Mills team,\n\nI am writing on behalf of \"Sehore Wheat Pool\", a pool of 2 verified farmer(s) registered on KrishiSetu, who have agreed on a single collective price for their harvest.\n\nOFFER SUMMARY\n  Crop:               Wheat\n  Total quantity:     65 quintals\n  Agreed price:       Rs. 2,450 per quintal (all farmers unanimously agreed)\n  Expected harvest:   2026-10-31\n  Growing region:     Sehore, Madhya Pradesh\n\nPARTICIPATING FARMERS\n  - Ramesh Patil (Sehore, Madhya Pradesh): 40 quintals\n  - Sita Devi (Ashta, Madhya Pradesh): 25 quintals\n\nMESSAGE FROM THE POOL COORDINATOR\nPickup from farm\n\nPlease reply to this email with your offer, any counter-price, quality requirements, payment terms and pickup details. Simply hit Reply.\nYour reply will be delivered to every farmer in the pool.\n\nPool coordinator: Ramesh Patil, 9854821142\nPool reference: KS-4B7LG6\n\nRegards,\nSehore Wheat Pool · via KrishiSetu",
+        "at": "2026-10-21T03:53:45.867Z",
+        "messageId": "<11129ab5-6c55-b537-5a27-90679ce88d07@ethereal.email>",
+        "previewUrl": "https://ethereal.email/message/atg3Rj.z5CbOg04iatg3Slz99noLetABAAAAAVPD0fT.C59cL-.gTeoZe.w"
+      }
+    ],
+    "agreedPrice": 2450,
+    "activeProposalId": null,
+    "createdAt": "2026-10-21T03:53:41.359Z"
+  }
+]
