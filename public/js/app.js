@@ -37,8 +37,7 @@
   $('uname').textContent = user.name;
   $('avatar').textContent = first[0].toUpperCase();
   $('logout').addEventListener('click', logout);
-
-  const items = [['🏠', 'Home', '#/home'], ['🤝', 'Farmer Pools', '#/pools'], ['🧑‍🌾', 'Labour Connect', '#/labour'], ['🚜', 'Farm Gear', '#/gear']];
+const items = [['🏠', 'Home', '#/home'], ['🤝', 'Farmer Pools', '#/pools'], ['🧑‍🌾', 'Labour Connect', '#/labour'], ['🚜', 'Farm Gear', '#/gear'], ['🌱', 'Vertical Farming', '#/vertical-farming']];
   const navHtml = items.map(([i, l, h]) => `<a href="${h}" data-h="${h}"><span class="ico">${i}</span>${l}</a>`).join('');
   $('nav').innerHTML = navHtml + `<a class="disabled"><span class="ico">✨</span>More soon</a>`;
   $('bnav').innerHTML = navHtml;
@@ -99,6 +98,7 @@
     else if (h === '/labour/profile') cleanup = await Labour.profile(view);
     else if (h === '/labour/inbox' || h === '/labour/sent') location.hash = '#/labour';
     else if (h === '/gear') cleanup = await Gear.market(view);
+    else if (h === '/vertical-farming') location.href = '/vertical-farming.html';  
     else if (h === '/gear/mine') cleanup = await Gear.mine(view);
     else if (h === '/gear/new') cleanup = await Gear.form(view);
     else if (h.startsWith('/gear/edit/')) cleanup = await Gear.form(view, h.split('/')[3]);
