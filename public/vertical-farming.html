@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KrishiSetu | Vertical Farming</title>
+<style>
+:root{--bg:#f4f5e9;--green:#173f2b;--leaf:#477a4f;--cream:#fffdf5;--muted:#69766a;--line:#e0e5d8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--green);font-family:Arial,sans-serif}
+header{background:var(--green);color:white;padding:22px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-size:24px;font-weight:800}.brand span{color:#a9d99b}
+header a{color:white;text-decoration:none}
+main{max-width:1150px;margin:auto;padding:28px 18px}
+.hero{background:linear-gradient(120deg,#173f2b,#477a4f);color:white;padding:32px;border-radius:22px}
+.hero h1{font-size:clamp(28px,5vw,44px);margin:8px 0}
+.hero p{max-width:650px;line-height:1.7;color:#e4f0df}
+.tag{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:bold}
+button,.button{background:var(--green);color:white;border:0;padding:12px 16px;border-radius:10px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+.hero button{background:#d9efc9;color:var(--green)}
+button:hover,.button:hover{opacity:.85}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}
+.stat,.card,.panel{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stat strong{display:block;font-size:25px;margin-top:8px}
+h2{font-size:24px;margin:30px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{overflow:hidden}
+.crop{height:115px;border-radius:12px;background:#e3eedb;display:grid;place-items:center;font-size:52px}
+.card h3{margin-bottom:6px}
+.muted{color:var(--muted);font-size:14px;line-height:1.6}
+.progress{height:9px;background:#e5e9df;border-radius:20px;overflow:hidden;margin:12px 0}
+.progress span{display:block;height:100%;background:var(--leaf);border-radius:20px}
+.price{font-size:22px;font-weight:800;margin:12px 0}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+section{scroll-margin-top:20px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tabs a{padding:10px 13px;background:var(--cream);border:1px solid var(--line);border-radius:10px;color:var(--green);text-decoration:none;font-size:14px}
+input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--green);margin:7px 0 14px}
+label{font-size:14px;font-weight:bold}
+.list-item{padding:14px 0;border-bottom:1px solid var(--line)}
+.list-item:last-child{border:0}
+footer{text-align:center;padding:28px;color:var(--muted);font-size:13px}
+.notice{padding:12px;background:#e6f1df;border-radius:10px;margin-top:12px;display:none}
+@media(max-width:720px){main{padding:18px 12px}.hero{padding:24px 19px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:20px}}
+@media(max-width:460px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.crop{height:100px}header{padding:18px}.brand{font-size:21px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Krishi<span>Setu</span></div>
+  <a href="#farms">Vertical Farming</a>
+</header>
+<main>
+  <section class="hero">
+    <div class="tag">Grow local · Eat fresh</div>
+    <h1>Your farm in the city.</h1>
+    <p>Subscribe to a vertical farm, follow your crops as they grow, and get fresh produce harvested for you. Farmers manage the growing process while customers stay connected to their food.</p>
+    <button onclick="document.getElementById('farms').scrollIntoView({behavior:'smooth'})">Explore farms ↓</button>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><span class="muted">Demo farms</span><strong>3</strong></div>
+    <div class="stat"><span class="muted">Crops growing</span><strong>12</strong></div>
+    <div class="stat"><span class="muted">Harvest model</span><strong>Local & fresh</strong></div>
+  </div>
+
+  <nav class="tabs">
+    <a href="#farms">Farm subscriptions</a><a href="#progress">Crop progress</a><a href="#equipment">Equipment</a><a href="#team">Farm team</a><a href="#orders">Produce orders</a>
+  </nav>
+
+  <section id="farms">
+    <h2>Explore vertical farms</h2>
+    <p class="muted">Demo listings — sample information, not live farm availability.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="crop">🥬</div><h3>GreenLeaf Urban Farm</h3>
+        <p class="muted">Leafy greens · Bengaluru</p>
+        <p>Weekly harvest of lettuce and spinach grown in controlled conditions.</p>
+        <div class="price">₹799 <span class="muted">/ month</span></div>
+        <button onclick="subscribe('GreenLeaf Urban Farm',799)">Subscribe</button>
+      </article>
+      <article class="card">
+        <div class="crop">🍓</div><h3>BerryStack Farm</h3>
+        <p class="muted">Strawberries · Bengaluru</p>
+        <p>Follow the growing cycle and receive updates before harvest.</p>
+        <div class="price">₹999 <span class="muted">/ month</span></div>
+        <button onclick="subscribe('BerryStack Farm',999)">Subscribe</button>
+      </article>
+      <article class="card">
+        <div class="crop">🌿</div><h3>HerbNest Farm</h3>
+        <p class="muted">Herbs · Bengaluru</p>
+        <p>Fresh basil, mint, and coriander for everyday cooking.</p>
+        <div class="price">₹599 <span class="muted">/ month</span></div>
+        <button onclick="subscribe('HerbNest Farm',599)">Subscribe</button>
+      </article>
+    </div>
+    <div id="subscriptionNotice" class="notice"></div>
+  </section>
+
+  <section id="progress">
+    <h2>Track crop progress</h2>
+    <div class="grid">
+      <article class="card"><div class="row"><h3>Lettuce</h3><span class="muted">Day 18 / 30</span></div><div class="progress"><span style="width:60%"></span></div><p class="muted">Growing stage · Estimated harvest in 12 days</p></article>
+      <article class="card"><div class="row"><h3>Spinach</h3><span class="muted">Day 14 / 25</span></div><div class="progress"><span style="width:56%"></span></div><p class="muted">Leaf development · Estimated harvest in 11 days</p></article>
+      <article class="card"><div class="row"><h3>Basil</h3><span class="muted">Day 10 / 28</span></div><div class="progress"><span style="width:36%"></span></div><p class="muted">Early growth · Estimated harvest in 18 days</p></article>
+    </div>
+  </section>
+
+  <section id="equipment">
+    <h2>Farm equipment</h2>
+    <div class="grid">
+      <article class="card"><h3>💧 Hydroponic system</h3><p class="muted">Water and nutrient delivery for crops grown without soil.</p><div class="row"><span>Demo status</span><strong>Operational</strong></div></article>
+      <article class="card"><h3>💡 Grow lights</h3><p class="muted">Supplemental lighting for indoor crop growth.</p><div class="row"><span>Demo status</span><strong>Operational</strong></div></article>
+      <article class="card"><h3>🌡️ Climate monitor</h3><p class="muted">Monitor temperature and humidity in the growing area.</p><div class="row"><span>Demo status</span><strong>Monitoring</strong></div></article>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2>Meet the farm team</h2>
+    <div class="grid">
+      <article class="card"><h3>👩‍🌾 Farm manager</h3><p class="muted">Coordinates planting schedules, crop health, and harvest planning.</p></article>
+      <article class="card"><h3>🌱 Crop specialist</h3><p class="muted">Tracks growth stages and recommends crop-care routines.</p></article>
+      <article class="card"><h3>📦 Harvest coordinator</h3><p class="muted">Organizes packing and preparation of customer orders.</p></article>
+    </div>
+  </section>
+
+  <section id="orders">
+    <h2>Order fresh produce</h2>
+    <div class="panel">
+      <form id="orderForm">
+        <label for="produce">Choose produce</label>
+        <select id="produce"><option>Lettuce bundle — ₹120</option><option>Spinach bundle — ₹80</option><option>Fresh herb pack — ₹90</option><option>Mixed greens box — ₹180</option></select>
+        <label for="quantity">Quantity</label>
+        <input id="quantity" type="number" min="1" max="20" value="1" required>
+        <label for="customer">Your name</label>
+        <input id="customer" maxlength="60" placeholder="Enter your name" required>
+        <button type="submit">Place demo order</button>
+      </form>
+      <p class="muted">Demo only: no payment is collected and no real farm order is sent.</p>
+      <div id="orderNotice" class="notice"></div>
+    </div>
+    <h2>Your demo activity</h2>
+    <div class="panel" id="activity"><p class="muted">Your subscriptions and demo orders will appear here.</p></div>
+  </section>
+</main>
+<footer>KrishiSetu · Vertical Farming Demo · Sample data only</footer>
+<script>
+const activity=document.getElementById('activity');
+const records=[];
+function showActivity(){
+  if(!records.length){activity.innerHTML='<p class="muted">Your subscriptions and demo orders will appear here.</p>';return;}
+  activity.innerHTML=records.map(r=>'<div class="list-item"><strong>'+escapeHTML(r.title)+'</strong><p class="muted">'+escapeHTML(r.detail)+'</p></div>').join('');
+}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function subscribe(name,price){
+  records.unshift({title:'Subscription interest: '+name,detail:'₹'+price+'/month · Demo request recorded in this page.'});
+  showActivity();
+  const n=document.getElementById('subscriptionNotice');
+  n.textContent='Demo subscription recorded for '+name+'. No payment was taken.';
+  n.style.display='block';
+}
+document.getElementById('orderForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const customer=document.getElementById('customer').value.trim();
+  const quantity=Number(document.getElementById('quantity').value);
+  const produce=document.getElementById('produce').value;
+  if(!customer||!Number.isInteger(quantity)||quantity<1||quantity>20)return;
+  records.unshift({title:'Produce order · '+produce,detail:'Customer: '+customer+' · Quantity: '+quantity+' · Demo order only.'});
+  showActivity();
+  const n=document.getElementById('orderNotice');
+  n.textContent='Demo order recorded on this page. No payment was taken.';
+  n.style.display='block';
+  e.target.reset();
+});
+</script>
+</body>
+</html>
