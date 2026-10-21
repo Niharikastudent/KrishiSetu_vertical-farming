@@ -62,13 +62,33 @@ window.Labour = (() => {
   // ================= FIND WORKERS =================
   async function find(root) {
     root.innerHTML = `
+      <div class="demo-banner">
+        <span>⚠️</span>
+        <div>
+          <strong>डेमो श्रमिक निर्देशिका (Sample Labour Profiles):</strong>
+          <span>यह कृषि श्रमिकों एवं किसानों के सीधे संपर्क के लिए प्रोटोटाइप सेवा है।</span>
+        </div>
+      </div>
       <section class="mkt-hero">
-        <div class="mh-text"><span class="mh-eye">🧑‍🌾 Labour Marketplace</span><h1>Find farm workers near you</h1>
-          <p>Browse available labour in your area with pay shown upfront — or list your own services.</p></div>
-        <form class="mh-search" id="sf" role="search"><span>🔍</span><input id="f-q" placeholder="What work do you need? e.g. ploughing, weeding, spraying…" autocomplete="off" /><button class="btn" type="submit">Search</button></form>
-        <div class="mh-chips" id="qc"><button type="button" data-s="" class="on">All work</button>${SKILLS.slice(0, 9).map(([s, i]) => `<button type="button" data-s="${s}">${i} ${s.split(' (')[0]}</button>`).join('')}</div>
+        <div class="mh-text">
+          <span class="mh-eye">🧑‍🌾 खेत श्रमिक सेवा · Farm Labour</span>
+          <h1>आसपास के कुशल खेत श्रमिक खोजें</h1>
+          <p>बुवाई, निराई, कटाई व स्प्रे के लिए आसपास के श्रमिकों को संपर्क करें — दरें और शर्तें पहले से स्पष्ट।</p>
+        </div>
+        <form class="mh-search" id="sf" role="search">
+          <span>🔍</span>
+          <input id="f-q" placeholder="कार्य खोजें: जुताई, निराई, स्प्रे, कटाई, ट्रैक्टर चालक…" autocomplete="off" />
+          <button class="btn sm" type="submit">खोजें · Search</button>
+        </form>
+        <div class="mh-chips" id="qc">
+          <button type="button" data-s="" class="on">सभी कार्य (All)</button>
+          ${SKILLS.slice(0, 9).map(([s, i]) => `<button type="button" data-s="${s}">${s.split(' (')[0]}</button>`).join('')}
+        </div>
       </section>
-      <div class="mkt-bar">${tabs('find')}<button class="btn ghost sm" id="my-req">📬 My requests</button></div>
+      <div class="mkt-bar">
+        ${tabs('find')}
+        <button class="btn ghost sm" id="my-req">📬 मेरे अनुरोध · Requests</button>
+      </div>
       <section class="filters lf">
         <select id="f-skill" hidden><option value=""></option>${SKILLS.map(([s]) => `<option>${s}</option>`).join('')}</select>
         <select id="f-state"><option value="">All states</option>${STATES.map((s) => `<option ${s === K().user.state ? 'selected' : ''}>${s}</option>`).join('')}</select>
@@ -108,7 +128,7 @@ window.Labour = (() => {
   }
 
   function tabs(on) {
-    const t = [['find', '🛒 Marketplace', '#/labour'], ['profile', '🛠️ Offer my work', '#/labour/profile']];
+    const t = [['find', '🔍 श्रमिक खोजें · Find Labour', '#/labour'], ['profile', '🛠️ मेरी श्रमिक प्रोफ़ाइल · Offer Work', '#/labour/profile']];
     return `<div class="seg ltabs">${t.map(([k, l, h]) => `<button type="button" class="${k === on ? 'on' : ''}" onclick="location.hash='${h}'">${l}</button>`).join('')}</div>`;
   }
 
