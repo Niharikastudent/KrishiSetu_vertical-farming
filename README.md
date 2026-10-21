@@ -1,9 +1,8 @@
-# 🌾 KrishiSetu (कृषि सेतु)
+# 🌾 KrishiSetu
 
 > **Empowering Indian Farmer Collectives through Crop Pooling, Direct Buyer Outreach, Labour Marketplace & Farm Gear Exchange.**
 
-[![Deployment](https://img.shields.io/badge/Deployed_on-render-000000?style=for-the-badge&logo=renderl&logoColor=white)](https://krishisetu-8ubi.onrender.com/)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-krishisetu--ai-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shreyasjoshi659-tech/krishisetu-ai)
+[![Deployment](https://img.shields.io/badge/Deployed_on-render-000000?style=for-the-badge&logo=renderl&logoColor=white)](https://krishisetu-8ubi.onrender.com/)&nbsp;&nbsp;&nbsp;
 [![Languages](https://img.shields.io/badge/Languages-7_Indian_Languages-d89932?style=for-the-badge)](https://shreyasjoshi659-tech.github.io/krishisetu-ai/)
 
 ---
@@ -63,7 +62,7 @@ KrishiSetu features a reactive, zero-reload translation engine with synchronized
 ### Installation & Run
 ```bash
 # Clone the repository
-git clone https://github.com/shreyasjoshi659-tech/krishisetu-ai.git
+git clone https://github.com/shreyasjoshi659-tech/KrishiSetu_.git
 
 # Navigate into project directory
 cd krishisetu-ai
