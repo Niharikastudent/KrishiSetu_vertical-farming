@@ -77,12 +77,18 @@ cd KrishiSetu_
 # Install dependencies
 npm ci
 
-# Start local server
-npm start
+# macOS / Linux: keep test accounts and JSON changes outside the sample data folder
+DATA_DIR=.local-data npm start
 # Server runs at http://localhost:3000
 ```
 
-Open `http://localhost:3000`, register a test account, sign in, then choose **Vertical Farm**. The old `/vertical-farming.html` URL redirects to the integrated app page. No extra environment variables are required for the demo; the app creates a local JWT secret automatically. Render's `render.yaml` sets `DATA_DIR=/var/data` and mounts a persistent disk, so the new JSON collections persist there. The Vercel configuration uses the app's `/tmp` fallback unless a persistent data directory is configured.
+On Windows PowerShell, set the data directory first, then start the server:
+```powershell
+$env:DATA_DIR = ".local-data"
+npm start
+```
+
+Open `http://localhost:3000`, register a test account, sign in, then choose **Vertical Farm**. The old `/vertical-farming.html` URL redirects to the integrated app page. The demo does not need extra environment variables; the app creates a local JWT secret automatically. `.local-data/` is ignored by Git so test records are not committed. Render's `render.yaml` sets `DATA_DIR=/var/data` and mounts a persistent disk, so the new JSON collections persist there. The Vercel configuration uses the app's `/tmp` fallback unless a persistent data directory is configured.
 
 ---
 
