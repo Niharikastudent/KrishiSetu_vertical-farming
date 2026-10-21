@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>KrishiSetu – Login or Register | Your Farmer Companion</title>
+  <meta name="description" content="KrishiSetu is your farmer companion. Log in or create a free account to get started." />
+  <meta name="theme-color" content="#0b1a12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="welcome">
+    <section class="hero" aria-label="Welcome to KrishiSetu">
+      <div class="sun"></div>
+      <svg class="hero-art" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 150 Q200 90 400 140 T800 120 V300 H0Z" fill="#14402a" opacity=".8"/>
+        <path d="M0 190 Q220 140 420 185 T800 165 V300 H0Z" fill="#1b5a38" opacity=".9"/>
+        <path d="M0 240 Q200 205 400 235 T800 220 V300 H0Z" fill="#256f45"/>
+        <g stroke="#0e3322" stroke-width="2" fill="none" opacity=".6">
+          <path d="M0 262 Q200 235 400 258 T800 245"/><path d="M0 280 Q200 255 400 276 T800 266"/>
+        </g>
+      </svg>
+
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#07130c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10"/><path d="M12 10C12 6 9 4 5 4c0 4 2 6 7 6Z"/><path d="M12 13c0-3 2.5-5 7-5 0 4-2.5 6-7 5Z"/></svg>
+        </div>
+        <div class="brand-name">Krishi<span>Setu</span></div>
+      </div>
+
+      <div class="hero-copy">
+        <h1>The bridge between <em>farmers</em> and a better harvest.</h1>
+        <p>Your companion for the field — from sowing to selling. Smart, simple and built for the way you farm.</p>
+        <div class="chips">
+          <span class="chip">🌾 Crop guidance</span>
+          <span class="chip">⛅ Weather</span>
+          <span class="chip">💰 Market prices</span>
+          <span class="chip">🤝 Community</span>
+        </div>
+      </div>
+      <div class="hero-foot">© KrishiSetu · Made for Indian farmers</div>
+    </section>
+
+    <section class="panel">
+      <div class="card">
+        <div class="tabs" id="tabs" data-active="login" role="tablist">
+          <span class="tab-pill"></span>
+          <button class="tab active" id="tab-login" data-tab="login" role="tab">Login</button>
+          <button class="tab" id="tab-register" data-tab="register" role="tab">Register</button>
+        </div>
+
+        <!-- LOGIN -->
+        <form id="login-form" class="show" novalidate>
+          <div><h2>Namaste 🙏</h2><p class="sub">Welcome back. Log in to continue.</p></div>
+          <div class="field"><label for="l-phone">Mobile number</label>
+            <input id="l-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="98765 43210" required /></div>
+          <div class="field"><label for="l-pass">Password</label>
+            <div class="pw"><input id="l-pass" type="password" autocomplete="current-password" placeholder="••••••••" required />
+              <button type="button" data-toggle="l-pass">Show</button></div></div>
+          <div class="error" id="login-error" role="alert"></div>
+          <button class="btn" id="login-btn" type="submit">Log in</button>
+          <p class="switch">New to KrishiSetu? <a data-go="register">Create an account</a></p>
+        </form>
+
+        <!-- REGISTER -->
+        <form id="register-form" novalidate>
+          <div><h2>Join KrishiSetu 🌱</h2><p class="sub">Create your free farmer account.</p></div>
+          <div class="field"><label for="r-name">Full name</label>
+            <input id="r-name" type="text" autocomplete="name" placeholder="Ramesh Patil" required /></div>
+          <div class="row">
+            <div class="field"><label for="r-phone">Mobile number</label>
+              <input id="r-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="98765 43210" required /></div>
+            <div class="field"><label for="r-pass">Password</label>
+              <div class="pw"><input id="r-pass" type="password" autocomplete="new-password" placeholder="Min 6 chars" required />
+                <button type="button" data-toggle="r-pass">Show</button></div></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="r-state">State</label>
+              <select id="r-state" required><option value="">Select state</option></select></div>
+            <div class="field"><label for="r-village">Village / Town</label>
+              <input id="r-village" type="text" placeholder="Optional" /></div>
+          </div>
+          <div class="field"><label for="r-land">Land size (acres)</label>
+            <input id="r-land" type="number" min="0" step="0.1" placeholder="Optional" /></div>
+          <div class="field"><label>What do you grow?</label>
+            <div class="crop-grid" id="crops"></div></div>
+          <div class="error" id="register-error" role="alert"></div>
+          <button class="btn" id="register-btn" type="submit">Create account</button>
+          <p class="switch">Already registered? <a data-go="login">Log in</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
