@@ -1,4 +1,4 @@
-/* Harvest Circle · KrishiSetu
+/* KrishiSetu
    Comprehensive Agricultural Translation & Multi-Language Engine
    Supports English, Hindi, Marathi, Punjabi, Kannada, Telugu, Gujarati */
 
@@ -160,7 +160,7 @@ window.I18N = (() => {
     tab_register: { en: 'New Register', hi: 'नया पंजीकरण', mr: 'नवीन नोंदणी', pa: 'ਨਵੀਂ ਰਜਿਸਟ੍ਰੇਸ਼ਨ', kn: 'ಹೊಸ ನೋಂದಣಿ', te: 'కొత్త నమోదు', gu: 'નવી નોંધણી' },
     btn_signin: { en: 'Sign In to Account →', hi: 'खाते में प्रवेश करें →', mr: 'खात्यात प्रवेश करा →', pa: 'ਖਾਤੇ ਵਿੱਚ ਜਾਓ →', kn: 'ಖಾತೆಗೆ ಪ್ರವೇಶಿಸಿ →', te: 'ఖాతాలోకి ప్రవేశించండి →', gu: 'ખાતામાં પ્રવેશો →' },
     btn_signup: { en: 'Create Farmer Account →', hi: 'किसान खाता बनाएं →', mr: 'शेतकरी खाते तयार करा →', pa: 'ਕਿਸਾਨ ਖਾਤਾ ਬਣਾਓ →', kn: 'ರೈತ ಖಾತೆ ತೆರೆಯಿರಿ →', te: 'రైతు ఖాతా తెరవండి →', gu: 'ખેડૂત ખાતું બનાવો →' },
-    switch_to_reg: { en: 'New to Harvest Circle? Create an account', hi: 'पहली बार आए हैं? नया किसान खाता बनाएं', mr: 'नवीन आहात? नवीन शेतकरी खाते तयार करा', pa: 'ਪਹਿਲੀ ਵਾਰ ਆਏ ਹੋ? ਨਵਾਂ ਖਾਤਾ ਬਣਾਓ', kn: 'ಹೊಸಬರೇ? ರೈತ ಖಾತೆ ತೆರೆಯಿರಿ', te: 'మొదటిసారా? రైతు ఖాతా తెరవండి', gu: 'પહેલી વાર છો? નવું ખાતું બનાવો' },
+    switch_to_reg: { en: 'New to KrishiSetu? Create an account', hi: 'पहली बार आए हैं? नया किसान खाता बनाएं', mr: 'नवीन आहात? नवीन शेतकरी खाते तयार करा', pa: 'ਪਹਿਲੀ ਵਾਰ ਆਏ ਹੋ? ਨਵਾਂ ਖਾਤਾ ਬਣਾਓ', kn: 'ಹೊಸಬರೇ? ರೈತ ಖಾತೆ ತೆರೆಯಿರಿ', te: 'మొదటిసారా? రైతు ఖాతా తెరవండి', gu: 'પહેલી વાર છો? નવું ખાતું બનાવો' },
     switch_to_login: { en: 'Already registered? Sign in here', hi: 'पहले से पंजीकृत हैं? लॉग इन करें', mr: 'आधीच नोंदणी केली आहे? लॉग इन करा', pa: 'ਪਹਿਲਾਂ ਹੀ ਰਜਿਸਟਰਡ ਹੋ? ਲਾਗ ਇਨ ਕਰੋ', kn: 'ಈಗಾಗಲೇ ನೋಂದಾಯಿಸಿದ್ದೀರಾ? ಲಾಗಿನ್ ಮಾಡಿ', te: 'ఇప్పటికే నమోదయ్యారా? లాగిన్ అవ్వండి', gu: 'પહેલેથી નોંધાયેલા છો? સાઇન ઇન કરો' },
 
     // Form Field Labels & Placeholders
@@ -177,13 +177,13 @@ window.I18N = (() => {
     show_pw: { en: 'Show', hi: 'दिखाएं', mr: 'दाखवा', pa: 'ਵੇਖਾਓ', kn: 'ತೋರಿಸಿ', te: 'చూపించు', gu: 'બતાવો' },
     hide_pw: { en: 'Hide', hi: 'छिपाएं', mr: 'लपवा', pa: 'ਛੁਪਾਓ', kn: 'ಮರೆಮಾಡಿ', te: 'దాచు', gu: 'છુપાવો' },
     footer_text: {
-      en: '© Harvest Circle · KrishiSetu · Designed for Indian Agricultural Collectives',
-      hi: '© Harvest Circle · KrishiSetu · भारतीय कृषि सहकारी संघों के अनुरूप',
-      mr: '© Harvest Circle · KrishiSetu · भारतीय कृषी सहकारी संस्थांसाठी',
-      pa: '© Harvest Circle · KrishiSetu · ਭਾਰਤੀ ਕਿਸਾਨ ਸਹਿਕਾਰੀਆਂ ਲਈ',
-      kn: '© Harvest Circle · KrishiSetu · ಭಾರತೀಯ ಕೃಷಿ ಒಕ್ಕೂಟಗಳಿಗಾಗಿ',
-      te: '© Harvest Circle · KrishiSetu · భారతీయ వ్యవసాయ సహకారాల కోసం',
-      gu: '© Harvest Circle · KrishiSetu · ભારતીય કૃષિ સહકારી માટે'
+      en: '© KrishiSetu · Designed for Indian Agricultural Collectives',
+      hi: '© KrishiSetu · भारतीय कृषि सहकारी संघों के अनुरूप',
+      mr: '© KrishiSetu · भारतीय कृषी सहकारी संस्थांसाठी',
+      pa: '© KrishiSetu · ਭਾਰਤੀ ਕਿਸਾਨ ਸਹਿਕਾਰੀਆਂ ਲਈ',
+      kn: '© KrishiSetu · ಭಾರತೀಯ ಕೃಷಿ ಒಕ್ಕೂಟಗಳಿಗಾಗಿ',
+      te: '© KrishiSetu · భారతీయ వ్యవసాయ సహకారాల కోసం',
+      gu: '© KrishiSetu · ભારતીય કૃષિ સહકારી માટે'
     },
 
     // App Navigation

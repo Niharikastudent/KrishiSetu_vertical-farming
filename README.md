@@ -1,4 +1,4 @@
-# 🌾 Harvest Circle · KrishiSetu (कृषि सेतु)
+# 🌾 KrishiSetu (कृषि सेतु)
 
 > **Empowering Indian Farmer Collectives through Crop Pooling, Direct Buyer Outreach, Labour Marketplace & Farm Gear Exchange.**
 

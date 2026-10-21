@@ -1,4 +1,4 @@
-/* Harvest Circle · KrishiSetu
+/* KrishiSetu
    Client-side Standalone Mock API & Persistence Engine for GitHub Pages
    Enables complete interactive experience (login, pools, voting, chat, labour, gear)
    without requiring a Node.js server. */

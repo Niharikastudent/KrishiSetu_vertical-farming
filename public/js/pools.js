@@ -1,4 +1,4 @@
-/* Harvest Circle · KrishiSetu – Crop Pools Module
+/* KrishiSetu – Crop Pools Module
    Collective harvest pooling, price suggestion & voting, group chat, and mill buyer outreach */
 window.Pools = (() => {
   const K = () => window.KS;
