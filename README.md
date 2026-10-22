@@ -39,10 +39,10 @@ Website - https://krishisetu-8ubi.onrender.com/
 - Hourly/daily tractor, reaper, rotavator, and sprayer rentals between neighboring farmers.
 
 ### 6. 🌱 Vertical Farming Workspace (Hackathon Demo)
-- Open **Vertical Farm** from the signed-in app navigation to see example crop progress, equipment checks, sample produce plans, and demo produce orders.
+- Open **Vertical Farming** from the signed-in app navigation to see the original sample-farm directory and team roles, crop progress, equipment checks, produce plans, demo subscription requests, and produce orders.
 - Farm Operators and Delivery Partners can register, view role-based work, accept assignments, and update task status. Operator profiles can post work.
-- Partner profiles, task assignments, plan requests, and demo order requests use the existing JSON-file store under `DATA_DIR`; they are protected by the app's existing sign-in.
-- Plan prices, produce quantities, crop progress, equipment status, catalog prices, and seeded work listings are **sample demo data**, not confirmed offers or live sensor readings. Plan and order requests do not collect payment or arrange delivery.
+- Partner profiles, task assignments, farm subscription requests, plan requests, and demo order requests use the existing JSON-file store under `DATA_DIR`; they are protected by sign-in and scoped to the signed-in account.
+- Farm names, locations, prices, produce quantities, crop progress, equipment status, catalog prices, and seeded work listings are **sample demo data**, not confirmed offers, staff profiles, subscriptions, or live sensor readings. Requests do not collect payment or arrange delivery.
 - The investment comparison uses editable example inputs to estimate annual revenue, operating costs, break-even selling price, and setup payback. It is an illustration, not financial advice or a profit guarantee.
 
 ---
@@ -63,7 +63,7 @@ KrishiSetu features a reactive, zero-reload translation engine with synchronized
 ## 🛠️ Local Development & Setup
 
 ### Prerequisites
-- Node.js (v18+)
+- Node.js (v20+)
 - npm
 
 ### Installation & Run
@@ -88,7 +88,13 @@ $env:DATA_DIR = ".local-data"
 npm start
 ```
 
-Open `http://localhost:3000`, register a test account, sign in, then choose **Vertical Farm**. The old `/vertical-farming.html` URL redirects to the integrated app page. The demo does not need extra environment variables; the app creates a local JWT secret automatically. `.local-data/` is ignored by Git so test records are not committed. Render's `render.yaml` sets `DATA_DIR=/var/data` and mounts a persistent disk, so the new JSON collections persist there. The Vercel configuration uses the app's `/tmp` fallback unless a persistent data directory is configured.
+Open `http://localhost:3000`, register a test account, sign in, then choose **Vertical Farming**. The old `/vertical-farming.html` URL redirects to the integrated app page. Local development creates a private JWT secret in `DATA_DIR`; production requires `JWT_SECRET` (at least 32 bytes) from the hosting secret manager. `.local-data/` is ignored by Git so test records are not committed. The Render blueprint sets production mode, uses the generated JWT secret, and mounts a persistent disk at `/var/data`.
+
+## Security and data-storage notes
+
+- Accounts included in the repository's seed data are blocked from signing in by default and cannot be re-enabled in production. Their rows are preserved; new users should register through the app. `ALLOW_SEEDED_ACCOUNTS=true` is only for isolated local development with synthetic data.
+- This repository is public, and its current Git history still contains the bundled seed records. Treat those records as exposed if they could identify real people; rotate affected credentials and review a separate data/history cleanup before any production use. The current branch does not delete or rewrite those records.
+- JSON storage is suitable only for a single app instance with persistent disk. The Vercel fallback uses ephemeral `/tmp` storage, so it is not suitable for durable user records as currently configured. A durable database/storage migration is required before relying on Vercel or multiple instances.
 
 ---
 

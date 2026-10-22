@@ -10,6 +10,11 @@ const subscriptions = col('vertical_subscriptions');
 const orders = col('vertical_orders');
 const ROLES = new Set(['farm-operator', 'delivery-partner']);
 const PLANS = new Set(['greens-weekly', 'farm-box', 'herb-box']);
+const FARMS = new Map([
+  ['greenleaf-urban', { name: 'GreenLeaf Urban Farm', monthlyPrice: 799 }],
+  ['berrystack', { name: 'BerryStack Farm', monthlyPrice: 999 }],
+  ['herbnest', { name: 'HerbNest Farm', monthlyPrice: 599 }],
+]);
 const PRODUCTS = new Map([
   ['lettuce', { name: 'Lettuce bundle', demoPrice: 120 }],
   ['spinach', { name: 'Spinach bundle', demoPrice: 80 }],
@@ -155,23 +160,29 @@ router.get('/vertical-farming/subscriptions', auth, (req, res) => {
   res.json({
     subscriptions: subscriptions.rows
       .filter((item) => item.userId === req.user.id)
-      .map(({ id, planId, status, isDemo, createdAt }) => ({ id, planId, status, isDemo, createdAt })),
+      .map(({ id, planId, farmId, status, isDemo, createdAt }) => ({ id, planId, farmId, status, isDemo, createdAt })),
   });
 });
 
 router.post('/vertical-farming/subscriptions', auth, (req, res) => {
-  const planId = clean((req.body || {}).planId, 40);
-  if (!PLANS.has(planId)) return res.status(400).json({ error: 'Choose one of the sample plans shown.' });
-  const existing = subscriptions.rows.find((item) => item.userId === req.user.id && item.planId === planId);
+  const body = req.body || {};
+  const farmId = clean(body.farmId, 40);
+  const planId = clean(body.planId, 40);
+  if ((farmId && (!FARMS.has(farmId) || planId)) || (!farmId && !PLANS.has(planId))) {
+    return res.status(400).json({ error: 'Choose one of the sample farms or plans shown.' });
+  }
+  const existing = subscriptions.rows.find((item) => item.userId === req.user.id &&
+    (farmId ? item.farmId === farmId : item.planId === planId));
   if (existing) {
     return res.json({
-      subscription: { id: existing.id, planId: existing.planId, status: existing.status, isDemo: true, createdAt: existing.createdAt },
+      subscription: { id: existing.id, planId: existing.planId, farmId: existing.farmId, status: existing.status, isDemo: true, createdAt: existing.createdAt },
     });
   }
   const item = {
     id: crypto.randomUUID(),
     userId: req.user.id,
-    planId,
+    planId: PLANS.has(planId) ? planId : null,
+    farmId: FARMS.has(farmId) ? farmId : null,
     status: 'demo-requested',
     isDemo: true,
     createdAt: new Date().toISOString(),
@@ -179,7 +190,7 @@ router.post('/vertical-farming/subscriptions', auth, (req, res) => {
   subscriptions.rows.push(item);
   subscriptions.save();
   res.status(201).json({
-    subscription: { id: item.id, planId: item.planId, status: item.status, isDemo: true, createdAt: item.createdAt },
+    subscription: { id: item.id, planId: item.planId, farmId: item.farmId, status: item.status, isDemo: true, createdAt: item.createdAt },
   });
 });
 

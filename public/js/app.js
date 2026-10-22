@@ -38,7 +38,7 @@
   $('avatar').textContent = first[0].toUpperCase();
   $('logout').addEventListener('click', logout);
 
-  const items = [['🏠', 'Home', '#/home'], ['🤝', 'Farmer Pools', '#/pools'], ['🧑‍🌾', 'Labour Connect', '#/labour'], ['🚜', 'Farm Gear', '#/gear'], ['🌱', 'Vertical Farm', '#/vertical-farming']];
+  const items = [['🏠', 'Home', '#/home'], ['🤝', 'Farmer Pools', '#/pools'], ['🧑‍🌾', 'Labour Connect', '#/labour'], ['🚜', 'Farm Gear', '#/gear'], ['🌱', 'Vertical Farming', '#/vertical-farming']];
   const navHtml = items.map(([i, l, h]) => `<a href="${h}" data-h="${h}"><span class="ico">${i}</span>${l}</a>`).join('');
   $('nav').innerHTML = navHtml + `<a class="disabled"><span class="ico">✨</span>More soon</a>`;
   $('bnav').innerHTML = navHtml;

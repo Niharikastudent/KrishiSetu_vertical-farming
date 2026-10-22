@@ -17,6 +17,11 @@ window.VerticalFarming = (() => {
     { id: 'herbs', label: 'Fresh herb pack', price: 90 },
     { id: 'mixed-greens', label: 'Mixed greens box', price: 180 },
   ];
+  const farms = [
+    { id: 'greenleaf-urban', name: 'GreenLeaf Urban Farm', icon: '🥬', crops: 'Leafy greens · Bengaluru', detail: 'Weekly lettuce and spinach grown in a controlled environment.', price: 799 },
+    { id: 'berrystack', name: 'BerryStack Farm', icon: '🍓', crops: 'Strawberries · Bengaluru', detail: 'Follow an example growing cycle and estimated harvest window.', price: 999 },
+    { id: 'herbnest', name: 'HerbNest Farm', icon: '🌿', crops: 'Fresh herbs · Bengaluru', detail: 'Basil, mint, and coriander for everyday cooking.', price: 599 },
+  ];
 
   function field(id, label, value, hint = '') {
     return `<div class="vf-field"><label for="${id}">${label}</label><input id="${id}" type="number" min="0" step="any" value="${value}" inputmode="decimal" aria-describedby="${hint ? id + '-hint' : ''}">${hint ? `<small class="vf-muted" id="${id}-hint">${hint}</small>` : ''}</div>`;
@@ -46,8 +51,17 @@ window.VerticalFarming = (() => {
         <p>Explore sample crop progress, connect farm operators with delivery partners, and compare traditional and vertical farming costs. Listings and plans are examples for this demo, not verified availability or business terms.</p>
       </section>
       <nav class="vf-jump" aria-label="Vertical farming sections">
-        <button type="button" data-scroll-to="vf-plans">Customer plans</button><button type="button" data-scroll-to="vf-orders">Produce order</button><button type="button" data-scroll-to="vf-partners">Partner hub</button><button type="button" data-scroll-to="vf-investment">Investment comparison</button><button type="button" data-scroll-to="vf-crops">Crop progress</button>
+        <button type="button" data-scroll-to="vf-farms">Explore Farms</button><button type="button" data-scroll-to="vf-subscription-history">Farm Subscription</button><button type="button" data-scroll-to="vf-plans">Produce plans</button><button type="button" data-scroll-to="vf-orders">Produce order</button><button type="button" data-scroll-to="vf-partners">Partner hub</button><button type="button" data-scroll-to="vf-investment">Investment comparison</button><button type="button" data-scroll-to="vf-crops">Crop progress</button><button type="button" data-scroll-to="vf-team">Farm team</button>
       </nav>
+
+      <section class="vf-section" id="vf-farms">
+        <div class="vf-section-head"><div><h2>Explore farms · Vertical farms</h2><p>These three listings, locations, crops, and prices are sample content from the original Vertical Farming page.</p></div><span class="vf-badge demo">SAMPLE FARMS</span></div>
+        <div class="vf-note">A farm subscription request is only a saved demo interest. There is no verified farm availability, billing, or delivery connection.</div>
+        <div class="vf-grid">
+          ${farms.map((farm) => `<article class="vf-card vf-plan"><div class="vf-crop-icon" aria-hidden="true">${farm.icon}</div><span class="vf-badge demo">DEMO FARM</span><h3>${esc(farm.name)}</h3><p>${esc(farm.crops)}</p><p>${esc(farm.detail)}</p><div class="vf-plan-price">${money(farm.price)} <small>/ month · example</small></div><button class="btn" type="button" data-request-farm="${esc(farm.id)}">Request farm subscription</button></article>`).join('')}
+        </div>
+        <article class="vf-card" id="vf-subscription-history"><h3>Your farm subscription requests</h3><div class="vf-list" id="vf-farm-subscription-list" aria-live="polite"><p class="vf-muted">Loading your requests…</p></div></article>
+      </section>
 
       <section class="vf-section" id="vf-plans">
         <div class="vf-section-head"><div><h2>Customer produce plans</h2><p>Example prices, quantities, produce, and delivery frequency are demo data only.</p></div><span class="vf-badge demo">DEMO PLANS</span></div>
@@ -144,6 +158,16 @@ window.VerticalFarming = (() => {
         </div>
       </section>`;
 
+    root.insertAdjacentHTML('beforeend', `
+      <section class="vf-section" id="vf-team">
+        <div class="vf-section-head"><div><h2>Farm team</h2><p>Example roles from the original page; these are not real or verified staff profiles.</p></div><span class="vf-badge demo">SAMPLE ROLES</span></div>
+        <div class="vf-grid">
+          <article class="vf-card"><div class="vf-role-icon">👩‍🌾</div><h3>Farm manager</h3><p>Coordinates planting schedules, crop health, and harvest planning.</p></article>
+          <article class="vf-card"><div class="vf-role-icon">🌱</div><h3>Crop specialist</h3><p>Tracks growth stages and recommends crop-care routines.</p></article>
+          <article class="vf-card"><div class="vf-role-icon">📦</div><h3>Harvest coordinator</h3><p>Organizes packing and preparation of customer orders.</p></article>
+        </div>
+      </section>`);
+
     root.querySelector('#vf-plan-grid').innerHTML = plans.map((plan) => `
       <article class="vf-card vf-plan">
         <span class="vf-badge demo">DEMO PLAN</span><h3>${esc(plan.name)}</h3>
@@ -228,14 +252,29 @@ window.VerticalFarming = (() => {
       if (results[0].status === 'rejected') taskGrid.insertAdjacentHTML('afterbegin', '<div class="vf-empty">Work listings could not be loaded. Try refreshing this page.</div>');
 
       const list = root.querySelector('#vf-subscription-list');
-      list.innerHTML = mySubscriptions.length
-        ? mySubscriptions.map((item) => {
+      const planSubscriptions = mySubscriptions.filter((item) => !item.farmId);
+      list.innerHTML = planSubscriptions.length
+        ? planSubscriptions.map((item) => {
           const plan = plans.find((p) => p.id === item.planId);
+          const farm = farms.find((p) => p.id === item.farmId);
           const date = item.createdAt ? new Date(item.createdAt).toLocaleDateString() : 'Date unavailable';
-          return `<div class="vf-list-item"><div><strong>${esc(plan?.name || 'Sample plan')}</strong><p>${esc(plan?.quantity || '')} · ${esc(plan?.frequency || '')}<br>Status: demo request received · ${esc(date)}</p></div><span class="vf-badge demo">${item.isDemo ? 'Demo' : 'Pending'}</span></div>`;
+          const label = farm?.name || plan?.name || 'Sample plan';
+          const detail = farm ? `${money(farm.price)} / month · demo request only` : `${plan?.quantity || ''} · ${plan?.frequency || ''}`;
+          return `<div class="vf-list-item"><div><strong>${esc(label)}</strong><p>${esc(detail)}<br>Status: demo request received · ${esc(date)}</p></div><span class="vf-badge demo">${item.isDemo ? 'Demo' : 'Pending'}</span></div>`;
         }).join('')
-        : '<p class="vf-muted">No requests yet. Saving a demo plan request does not start billing.</p>';
+        : '<p class="vf-muted">No produce plan requests yet. Saving a demo plan request does not start billing.</p>';
       if (results[1].status === 'rejected') list.innerHTML = '<p class="vf-muted">Your request history could not be loaded. Try refreshing this page.</p>';
+
+      const farmList = root.querySelector('#vf-farm-subscription-list');
+      const farmSubscriptions = mySubscriptions.filter((item) => item.farmId);
+      farmList.innerHTML = farmSubscriptions.length
+        ? farmSubscriptions.map((item) => {
+          const farm = farms.find((p) => p.id === item.farmId);
+          const date = item.createdAt ? new Date(item.createdAt).toLocaleDateString() : 'Date unavailable';
+          return `<div class="vf-list-item"><div><strong>${esc(farm?.name || 'Sample farm')}</strong><p>${farm ? money(farm.price) + ' / month · demo request only' : 'Demo farm request'}<br>Status: no payment or delivery · ${esc(date)}</p></div><span class="vf-badge demo">Demo</span></div>`;
+        }).join('')
+        : '<p class="vf-muted">No farm subscription requests yet. A request does not start billing.</p>';
+      if (results[1].status === 'rejected') farmList.innerHTML = '<p class="vf-muted">Your farm request history could not be loaded. Try refreshing this page.</p>';
 
       const orderList = root.querySelector('#vf-order-list');
       orderList.innerHTML = myOrders.length
@@ -265,19 +304,21 @@ window.VerticalFarming = (() => {
     root.addEventListener('click', async (event) => {
       const scrollButton = event.target.closest('[data-scroll-to]');
       const planButton = event.target.closest('[data-request-plan]');
+      const farmButton = event.target.closest('[data-request-farm]');
       const claimButton = event.target.closest('[data-claim-task]');
       const statusButton = event.target.closest('[data-task-status]');
       if (scrollButton) {
         root.querySelector('#' + scrollButton.dataset.scrollTo)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
       }
-      if (!planButton && !claimButton && !statusButton) return;
-      const button = planButton || claimButton || statusButton;
+      if (!planButton && !farmButton && !claimButton && !statusButton) return;
+      const button = planButton || farmButton || claimButton || statusButton;
       button.disabled = true;
       try {
-        if (planButton) {
-          await K().api('/vertical-farming/subscriptions', { method: 'POST', body: { planId: planButton.dataset.requestPlan } });
-          K().toast('Demo plan request saved. No payment was taken.');
+        if (planButton || farmButton) {
+          const request = planButton ? { planId: planButton.dataset.requestPlan } : { farmId: farmButton.dataset.requestFarm };
+          await K().api('/vertical-farming/subscriptions', { method: 'POST', body: request });
+          K().toast('Demo subscription request saved. No payment was taken.');
         } else if (claimButton) {
           await K().api(`/farm-hub/tasks/${encodeURIComponent(claimButton.dataset.claimTask)}/claim`, { method: 'POST' });
           K().toast('Work accepted. Your assignment is saved.');
